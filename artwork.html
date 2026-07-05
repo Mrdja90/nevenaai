@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork &amp; Book Covers — Nevena Mucic, AI Visual Content Creator</title>
+    <meta name="description" content="Original oil and acrylic paintings and book cover illustrations by Nevena Mucic, an AI Visual Content Creator based in Basel — the fine-art foundation behind her AI-driven visual work.">
+    <link rel="canonical" href="/artwork.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Artwork &amp; Book Covers — Nevena Mucic, AI Visual Content Creator">
+    <meta property="og:description" content="Original oil and acrylic paintings and book cover illustrations by Nevena Mucic, an AI Visual Content Creator based in Basel — the fine-art foundation behind her AI-driven visual work.">
+    <meta property="og:url" content="/artwork.html">
+    <meta property="og:image" content="/static/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Artwork &amp; Book Covers — Nevena Mucic, AI Visual Content Creator">
+    <meta name="twitter:description" content="Original oil and acrylic paintings and book cover illustrations by Nevena Mucic, an AI Visual Content Creator based in Basel — the fine-art foundation behind her AI-driven visual work.">
+    <meta name="twitter:image" content="/static/profile.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .top-nav { display: flex; justify-content: flex-end; padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-links a { color: #999999; text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #ffffff; }
+        .nav-links a.active { color: #ffffff; }
+        .artwork-page { max-width: 1200px; margin: 0 auto; padding: 80px 5% 120px; }
+        .page-header { margin-bottom: 80px; }
+        .page-eyebrow { font-size: 1.3rem; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 10px; }
+        .page-title { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.5; margin-bottom: 16px; color: #999999; }
+        .page-title em { font-weight: 400; font-style: italic; }
+        .page-desc { font-size: 0.95rem; color: #777777; line-height: 1.8; max-width: 560px; }
+        /* ── Masonry Gallery ── */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 10px;
+        }
+        .masonry-item {
+            cursor: pointer;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background: #0d0d0d;
+            transform: scale(1) translateY(0);
+            transition: transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1);
+        }
+        .masonry-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1);
+        }
+        .masonry-item:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+        .masonry-item:hover img {
+            border-color: rgba(255,255,255,0.45);
+        }
+        .art-caption { padding: 12px 4px 0; display: flex; justify-content: space-between; align-items: baseline; }
+        .art-title { font-size: 0.82rem; color: #999999; }
+        .art-size { font-size: 0.7rem; color: #777777; }
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 40px; }
+        .lightbox.open { display: flex; }
+        .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .lightbox-inner img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
+        .lightbox-caption { text-align: center; }
+        .lightbox-title { font-family: 'Inter', sans-serif; font-style: italic; font-size: 1.1rem; color: #cccccc; margin-bottom: 4px; }
+        .lightbox-size { font-size: 0.72rem; color: #777777; text-transform: uppercase; letter-spacing: 0.1em; }
+        .lightbox-close { position: fixed; top: 24px; right: 32px; font-size: 1.8rem; color: #777777; cursor: pointer; background: none; border: none; line-height: 1; transition: color 0.2s ease; z-index: 1001; }
+        .lightbox-close:hover { color: #fff; }
+        .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 2rem; color: #777777; cursor: pointer; background: none; border: none; padding: 20px; transition: color 0.2s ease; z-index: 1001; }
+        .lightbox-nav:hover { color: #fff; }
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
+
+        /* ── Book Covers Section ── */
+        .books-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 120px;
+        }
+
+        .books-header {
+            margin-bottom: 48px;
+            padding-top: 80px;
+        }
+
+        .books-eyebrow {
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .books-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #999999;
+        }
+
+        .books-title em { font-weight: 400; font-style: italic; }
+
+        .books-desc {
+            font-size: 0.9rem;
+            color: #777777;
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+        /* 2-column card grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .book-card {
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #0d0d0d;
+            display: flex;
+            flex-direction: column;
+            transform: scale(1) translateY(0);
+            transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1);
+        }
+
+        .book-card:hover {
+            border-color: rgba(255,255,255,0.45);
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Scene image — full width at top */
+        .book-scene {
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        /* Show the scene photo, hide the flat cover thumb */
+        .book-scene > img:first-child {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%;
+            filter: brightness(0.92);
+            transition: transform 0.5s ease;
+        }
+
+        /* Portrait cards: let the image define its own height so nothing is cropped at any zoom */
+        .book-card.portrait .book-scene {
+            height: auto;
+            overflow: visible;
+        }
+
+        .book-card.portrait .book-scene > img:first-child {
+            object-fit: unset;
+            object-position: unset;
+            width: 100%;
+            height: auto;
+        }
+
+        .book-card:hover .book-scene > img:first-child {
+            transform: scale(1.04);
+        }
+
+        .book-cover-thumb { display: none; }
+
+        /* Text block below image */
+        .book-body {
+            padding: 24px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            flex: 1;
+        }
+
+        .book-series {
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 8px;
+        }
+
+        .book-title {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.35;
+            margin-bottom: 5px;
+        }
+
+        .book-authors {
+            font-size: 0.74rem;
+            color: #777777;
+            margin-bottom: 14px;
+            letter-spacing: 0.03em;
+        }
+
+        .book-about {
+            font-size: 0.82rem;
+            color: #777777;
+            line-height: 1.75;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+
+        .book-meta {
+            font-size: 0.68rem;
+            color: #777777;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .top-nav { padding: 16px 20px; }
+            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            .artwork-page { padding: 40px 5% 80px; }
+            .masonry-grid { grid-template-columns: 1fr; gap: 16px; }
+            .lightbox { padding: 20px; }
+            .lightbox-nav { display: none; }
+            .books-section { padding: 0 5% 60px; }
+            .books-grid { grid-template-columns: 1fr; }
+            .book-scene { height: 320px; }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .masonry-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#case-studies">Case Studies</a>
+            <a href="/artwork.html" class="active">Creative Work</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="artwork-page">
+        <div class="page-header">
+            <p class="page-eyebrow">Original paintings · Oil &amp; acrylic on canvas</p>
+            <h1 class="page-title">The work <em>behind the work.</em></h1>
+            <p class="page-desc">Before AI tools, there were brushes. These paintings span over a decade of exhibitions, personal exploration, and the same instinct for composition and colour that now drives every visual project.</p>
+        </div>
+
+        <div class="masonry-grid" id="masonryGrid"></div>
+    </div>
+
+    <!-- Book Covers Section -->
+    <div class="books-section" id="book-covers">
+        <div class="books-header">
+            <p class="books-eyebrow">Cover Illustration · Book Design</p>
+            <h2 class="books-title">Between the <em>poem and the page.</em></h2>
+            <p class="books-desc">Four covers for a series of Vlach folk poetry collections — each one designed to honour the cultural heritage and emotional depth of the verses inside.</p>
+        </div>
+
+        <div class="books-grid">
+
+            <!-- Card 01: scene photo — crop from top so book fills frame -->
+            <div class="book-card">
+                <div class="book-scene">
+                    <img src="/static/artwork/covers/drag-1-scene.png" alt="The Poetry of Love and Longing" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-1-cover.png" alt="Book cover for The Poetry of Love and Longing">
+                </div>
+                <div class="book-body">
+                    <p class="book-series">Cover Illustration · 01</p>
+                    <p class="book-title">The Poetry of Love and Longing</p>
+                    <p class="book-authors">Nemanja Ispirović &amp; Vesna Tošić</p>
+                    <p class="book-about">A unique collection of Vlach folk poems capturing the tenderest emotions of love, melancholy, and deep longing. Each poem is accompanied by detailed interpretations that bring readers closer to the hidden symbolism, language, and authentic spirit of this heritage — playing a vital role in preserving the rich oral traditions and cultural identity of the Vlach people.</p>
+                    <p class="book-meta">Bor, 2024</p>
+                </div>
+            </div>
+
+            <!-- Card 02: scene photo — crop from top so book fills frame -->
+            <div class="book-card">
+                <div class="book-scene">
+                    <img src="/static/artwork/covers/drag-2-scene.png" alt="The Poetry of Love and Longing II" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-2-cover.png" alt="Book cover for The Poetry of Love and Longing II">
+                </div>
+                <div class="book-body">
+                    <p class="book-series">Cover Illustration · 02</p>
+                    <p class="book-title">The Poetry of Love and Longing II</p>
+                    <p class="book-authors">Nemanja Ispirović &amp; Vesna Tošić</p>
+                    <p class="book-about">A new cycle of Vlach lyric folk poems continuing a profound exploration of love, longing, and heritage. Through additional verses and their accompanying interpretations, new layers of hidden symbolism and the authentic spirit of the community are revealed — another invaluable contribution to the preservation and deeper understanding of this rich oral tradition.</p>
+                    <p class="book-meta">Bor, 2025</p>
+                </div>
+            </div>
+
+            <!-- Card 03: scene photo — portrait orientation -->
+            <div class="book-card portrait">
+                <div class="book-scene">
+                    <img src="/static/artwork/covers/drag-3-scene.png" alt="The Poetry of Love and Longing III">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-3-cover.png" alt="Book cover for The Poetry of Love and Longing III">
+                </div>
+                <div class="book-body">
+                    <p class="book-series">Cover Illustration · 03</p>
+                    <p class="book-title">The Poetry of Love and Longing III</p>
+                    <p class="book-authors">Nemanja Ispirović &amp; Vesna Tošić</p>
+                    <p class="book-about">A rich collection of Vlach lyric folk poetry dedicated to the deepest human emotions — love and a specific, melancholic longing (dor). Through these traditional verses, the authors preserve the authentic cultural heritage and oral traditions of the Vlach community. The book is further enriched by detailed commentaries, helping readers fully grasp the language, symbols, and context of this beautiful folk poetry.</p>
+                    <p class="book-meta">Bor, 2025</p>
+                </div>
+            </div>
+
+            <!-- Card 04: scene photo — portrait orientation -->
+            <div class="book-card portrait">
+                <div class="book-scene">
+                    <img src="/static/artwork/covers/kasi-scene.png" alt="Folk Poems of the Hearth">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/kasi-cover.png" alt="Book cover for Folk Poems of the Hearth">
+                </div>
+                <div class="book-body">
+                    <p class="book-series">Cover Illustration · 04</p>
+                    <p class="book-title">Folk Poems of the Hearth</p>
+                    <p class="book-authors">Nemanja Ispirović &amp; Vesna Tošić</p>
+                    <p class="book-about">A unique collection of Vlach lyric folk poems dedicated to home, family, and the warmth of the hearth. Through traditional verses and their accompanying interpretations, the work brings to life the ancient customs, daily life, and authentic spiritual world of the Vlach community — preserving this intimate and precious part of a rich oral tradition from oblivion.</p>
+                    <p class="book-meta">Bor, 2025</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#8592;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#8594;</button>
+        <div class="lightbox-inner">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-size" id="lightboxSize"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SITEURL = "";
+        const paintings = [
+            ["A symphony for her 50x50.jpg", "A Symphony for Her", "50×50 cm", "Acrylic"],
+            ["Accept yourself 100x70.jpg", "Accept Yourself", "100×70 cm", "Acrylic"],
+            ["Bagdad Cafe 100x50.jpg", "Bagdad Cafe", "100×50 cm", "Acrylic"],
+            ["Between the Lines 50x40.jpg", "Between the Lines", "50×40 cm", "Acrylic"],
+            ["Cuckoo's nest 50x70.jpg", "Cuckoo's Nest", "50×70 cm", "Acrylic"],
+            ["Fitting in 50x50.jpg", "Fitting In", "50×50 cm", "Acrylic"],
+            ["Her 40x50.jpg", "Her", "40×50 cm", "Acrylic"],
+            ["Horse 50x70.jpg", "Horse", "50×70 cm", "Acrylic"],
+            ["Imposter syndrome 30x40.jpg", "Imposter Syndrome", "30×40 cm", "Acrylic"],
+            ["Majesty in bloom 70x50.jpg", "Majesty in Bloom", "70×50 cm", "Acrylic"],
+            ["Moment 23x31.jpg", "Moment", "23×31 cm", "Acrylic"],
+            ["Morning on the lake 70x60.jpg", "Morning on the Lake", "70×60 cm", "Acrylic"],
+            ["My roots 100x100.jpg", "My Roots", "100×100 cm", "Acrylic"],
+            ["Obscurity 100x70.jpg", "Obscurity", "100×70 cm", "Acrylic"],
+            ["Paper boath 70x50.jpg", "Paper Boat", "70×50 cm", "Acrylic"],
+            ["Rebirth 100x70.jpg", "Rebirth", "100×70 cm", "Acrylic"],
+            ["Resonance of Five Years 60x90.jpg", "Resonance of Five Years", "60×90 cm", "Acrylic"],
+            ["Retro 23x31.jpg", "Retro", "23×31 cm", "Acrylic"],
+            ["Salt in the Light 40x40.jpg", "Salt in the Light", "40×40 cm", "Acrylic"],
+            ["Simplicity 70x90.jpg", "Simplicity", "70×90 cm", "Acrylic"],
+            ["son.jpg", "Son", "", "Acrylic"],
+            ["Swan 50x40.jpg", "Swan", "50×40 cm", "Acrylic"],
+            ["Swim 23x31.jpg", "Swim", "23×31 cm", "Acrylic"],
+            ["The Cat 40x40.jpg", "The Cat", "40×40 cm", "Acrylic"],
+            ["The Fox 80x100.jpg", "The Fox", "80×100 cm", "Acrylic"],
+            ["The one 23x31.jpg", "The One", "23×31 cm", "Acrylic"],
+            ["Time 140x100.jpg", "Time", "140×100 cm", "Acrylic"],
+            ["Whisper in Motion 40x40.jpg", "Whisper in Motion", "40×40 cm", "Oil"]
+        ];
+
+        // ── Masonry Gallery ──
+        var grid = document.getElementById('masonryGrid');
+        var total = paintings.length;
+        var currentIndex = 0;
+
+        paintings.forEach(function(painting, i) {
+            var filename = painting[0];
+            var title = painting[1];
+            var size = painting[2];
+            var item = document.createElement('div');
+            item.className = 'masonry-item';
+            var img = document.createElement('img');
+            img.src = SITEURL + '/static/artwork/paintings/' + encodeURIComponent(filename);
+            img.alt = title;
+            img.decoding = 'async';
+            img.loading = i < 4 ? 'eager' : 'lazy';
+            if (i >= 4) { img.fetchPriority = 'low'; }
+            item.appendChild(img);
+            item.addEventListener('click', function() { openLightbox(i); });
+            grid.appendChild(item);
+        });
+
+        // Lightbox
+        var lightboxOpen = false;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            showLightboxItem(index);
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lightboxOpen = true;
+        }
+
+        function showLightboxItem(index) {
+            var painting = paintings[index];
+            var filename = painting[0];
+            var title = painting[1];
+            var size = painting[2];
+            var medium = painting[3] || 'Acrylic';
+            document.getElementById('lightboxImg').src = SITEURL + '/static/artwork/paintings/' + encodeURIComponent(filename);
+            document.getElementById('lightboxImg').alt = title;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxSize').textContent = size ? medium + ' on canvas · ' + size : '';
+        }
+
+        function navigateLightbox(dir) {
+            currentIndex = (currentIndex + dir + total) % total;
+            showLightboxItem(currentIndex);
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+            lightboxOpen = false;
+        }
+
+        function closeLightboxOnBg(e) {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (lightboxOpen) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+            }
+        });
+    </script>
+</body>
+</html>
+

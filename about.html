@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nevena Mucic — AI Visual Content Creator &middot; Basel</title>
+    <meta name="description" content="Meet Nevena Mucic, an AI Visual Content Creator in Basel, Switzerland — an engineer-turned-artist blending chemical engineering precision with a fine art background in AI image generation, video production, and content strategy.">
+    <link rel="canonical" href="/about.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="About Nevena Mucic — AI Visual Content Creator · Basel">
+    <meta property="og:description" content="Meet Nevena Mucic, an AI Visual Content Creator in Basel, Switzerland — an engineer-turned-artist blending chemical engineering precision with a fine art background in AI image generation, video production, and content strategy.">
+    <meta property="og:url" content="/about.html">
+    <meta property="og:image" content="/static/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Nevena Mucic — AI Visual Content Creator · Basel">
+    <meta name="twitter:description" content="Meet Nevena Mucic, an AI Visual Content Creator in Basel, Switzerland — an engineer-turned-artist blending chemical engineering precision with a fine art background in AI image generation, video production, and content strategy.">
+    <meta name="twitter:image" content="/static/profile.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nevena Mucic",
+        "jobTitle": "AI Visual Content Creator",
+        "url": "/about.html",
+        "image": "/static/profile.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "CH"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/nevenamucic"
+        ]
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-links a {
+            color: #999999;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #ffffff; }
+        .nav-links a.active { color: #ffffff; }
+
+        .about-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 5% 120px;
+        }
+
+        .about-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #777777;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .page-header {
+            display: grid;
+            grid-template-columns: 260px 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .page-header h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.05;
+        }
+
+        .page-header h1 em {
+            font-weight: 400;
+            font-style: italic;
+            display: block;
+        }
+
+        .header-statement p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #777777;
+            font-style: italic;
+        }
+
+        .header-statement p strong {
+            color: #cccccc;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .header-photo {
+            position: relative;
+            width: 260px;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            filter: grayscale(15%) contrast(1.05);
+        }
+
+        .header-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 55%;
+            background: linear-gradient(to top, #050505 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: start;
+        }
+
+        .section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding-top: 6px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .background-text p {
+            font-size: 0.95rem;
+            line-height: 1.95;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .background-text p:last-child { margin-bottom: 0; }
+
+        .background-text p strong {
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        .pull-quote {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            line-height: 1.5;
+            color: #cccccc;
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 28px;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .timeline-item:first-child { padding-top: 0; }
+        .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .timeline-role {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #cccccc;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            font-size: 0.8rem;
+            color: #777777;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #777777;
+        }
+
+        .timeline-desc ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .timeline-desc ul li {
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #777777;
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            color: #777777;
+            white-space: nowrap;
+            padding-top: 5px;
+            text-align: right;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .tools-group-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 16px;
+        }
+
+        .tool-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .tool-row:last-child { border-bottom: none; }
+
+        .tool-name {
+            font-size: 0.85rem;
+            color: #999999;
+            width: 130px;
+            flex-shrink: 0;
+        }
+
+        .tool-bar-track {
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            position: relative;
+        }
+
+        .tool-bar-fill {
+            position: absolute;
+            top: 0; left: 0;
+            height: 1px;
+            background: rgba(255,255,255,0.35);
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .credential-cell {
+            background: #050505;
+            padding: 24px 20px;
+        }
+
+        .credential-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .credential-label {
+            font-size: 0.72rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .lang-name {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 4px;
+        }
+
+        .lang-level {
+            font-size: 0.7rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .edu-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .edu-item:first-child { padding-top: 0; }
+        .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .edu-institution { font-size: 0.9rem; color: #cccccc; margin-bottom: 4px; }
+        .edu-field { font-size: 0.78rem; color: #777777; margin-bottom: 4px; }
+        .edu-years { font-size: 0.72rem; color: #777777; }
+
+        .cert-list { display: flex; flex-direction: column; gap: 12px; }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+        }
+
+        .cert-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: #777777;
+            flex-shrink: 0;
+        }
+
+        .cert-name { font-size: 0.85rem; color: #999999; }
+
+
+
+        @media (max-width: 900px) {
+            .page-header { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .header-photo { width: 100%; max-width: 320px; height: auto; aspect-ratio: 260 / 320; margin: 0 auto; grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav { padding: 12px 16px; justify-content: center; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 0; }
+            .nav-links a { margin-left: 12px; font-size: 0.75rem; }
+            .about-page { padding: 32px 5% 80px; }
+            .page-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; padding-bottom: 40px; }
+            .header-photo { width: 100%; max-width: 260px; height: auto; aspect-ratio: 260 / 320; margin: 0 auto; grid-column: auto; }
+            .about-section { grid-template-columns: 1fr; gap: 8px; padding: 32px 0; }
+            .section-label { position: static; margin-bottom: 6px; }
+            .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+            .tools-grid { grid-template-columns: 1fr; gap: 28px; }
+            .credentials-grid { grid-template-columns: 1fr 1fr; }
+            .pull-quote { font-size: 1.1rem; padding-left: 18px; margin: 24px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html" class="active">About</a>
+            <a href="/index.html#case-studies">Case Studies</a>
+            <a href="/artwork.html">Creative Work</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="about-page">
+
+        <h2 class="about-eyebrow">Engineer. Artist. AI Creator.</h2>
+        <div class="page-header">
+            <div class="header-photo">
+                <img src="/static/profile.jpg" alt="Nevena Mucic">
+            </div>
+            <h1>NEVENA<br><em>Mucic</em></h1>
+            <div class="header-statement">
+                <p>
+                    <strong>AI Content Creator & Visual Marketer</strong> based in Basel, Switzerland.
+                    Blending the precision of an analytical engineer with the instinct of a fine artist —
+                    to make content that doesn't just look good, but <strong>performs</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Background</div>
+            <div class="section-content">
+                <div class="background-text">
+                    <p>My path to AI creative work is not a straight line — and that's exactly what makes it useful.
+                    A <strong>chemical engineering degree</strong> from the University of Belgrade trained me to think
+                    in systems, to hold precision and complexity at the same time. That same rigour carried me into
+                    <strong>data analysis at Accenture</strong> in Warsaw, where I spent over two years handling
+                    content review and quality assurance for a Forbes top-10 company — routinely working to accuracy
+                    standards above 98%.</p>
+
+                    <p>While all of that was happening, art was happening too. Group exhibitions. Two published poetry
+                    collections. Cover illustrations. These weren't side projects — they were a second education in
+                    how meaning travels through an image, and what it takes to stop someone mid-scroll. Running in
+                    parallel was a third: teaching myself the AI and digital marketing side, work that led to
+                    certifications in Google Digital Marketing & E-commerce and Start Writing Prompts Like a Pro.</p>
+
+                    <div class="pull-quote">
+                        "Quality assurance taught me that speed without judgment just produces mistakes faster. AI takes care of the speed, while judgment is still my job."
+                    </div>
+
+                    <p>Since 2025, I've been working as a freelance AI content creator in Basel, Switzerland — offering
+                    AI image generation, AI video production, and social media content creation for clients across
+                    the country. As a generative AI content creator and a Midjourney and Artlist toolkit artist,
+                    I combine hands-on prompt engineering services with the eye of a content strategy AI consultant,
+                    shaping AI marketing content that's rooted in genuine brand understanding rather than prompt
+                    guesswork. I bring the analytical rigor to measure what works, and the creative instinct to know why.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">By the numbers</div>
+            <div class="section-content">
+                <div class="credentials-grid">
+                    <div class="credential-cell">
+                        <div class="credential-number">3</div>
+                        <div class="credential-label">Swiss clients<br>served</div>
+                    </div>
+                    <div class="credential-cell">
+                        <div class="credential-number">545%</div>
+                        <div class="credential-label">Daily reach growth<br>(NetzwerkPRO)</div>
+                    </div>
+                    <div class="credential-cell">
+                        <div class="credential-number">28K+</div>
+                        <div class="credential-label">Views generated<br>(Kunstzentrum SOKO)</div>
+                    </div>
+                    <div class="credential-cell">
+                        <div class="credential-number">98%+</div>
+                        <div class="credential-label">Data quality<br>at Accenture</div>
+                    </div>
+                    <div class="credential-cell">
+                        <div class="credential-number">2</div>
+                        <div class="credential-label">Published poetry<br>collections</div>
+                    </div>
+                    <div class="credential-cell">
+                        <div class="credential-number">3</div>
+                        <div class="credential-label">Group<br>exhibitions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Experience</div>
+            <div class="section-content">
+                <div class="timeline-item">
+                    <div>
+                        <div class="timeline-role">AI Content Creator — Marketing & Visual Storytelling</div>
+                        <div class="timeline-company">Freelance · Self-Employed · Basel, Switzerland</div>
+                        <div class="timeline-desc">
+                            Freelance practice working as a Midjourney and Artlist toolkit artist for three Swiss clients, combining AI visual production with digital marketing strategy.
+                            <ul>
+                                <li>Artlist AI Toolkit (Kling 3.0, Seedance 2.0, Veo 3), Canva, CapCut</li>
+                                <li>Event posters, reels, and carousels informed by hook strategy and audience behaviour</li>
+                                <li>Branded AI video outros establishing consistent visual identity for nonprofit clients</li>
+                                <li>Copy and content direction via Claude, ChatGPT, and Gemini</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-date">Aug 2025 — Present</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div>
+                        <div class="timeline-role">Data Analyst</div>
+                        <div class="timeline-company">Accenture · Warsaw, Poland</div>
+                        <div class="timeline-desc">
+                            Data handling, analysis, and quality assurance for a multinational Forbes top-10 client.
+                            <ul>
+                                <li>Maintained data quality above 98% consistently</li>
+                                <li>Identified gaps and developed methods for policy implementation and quality improvement</li>
+                                <li>Provided back-end support and tracked events across supported language markets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-date">Nov 2018 — Feb 2021</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Tools</div>
+            <div class="section-content">
+                <div class="tools-grid">
+                    <div>
+                        <div class="tools-group-label">AI Visual Production</div>
+                        <div class="tool-row"><span class="tool-name">Midjourney</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:96%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Kling 3.0</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:78%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Veo 3</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:72%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Seedance 2.0</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:68%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Nano Banana</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:95%"></div></div></div>
+                    </div>
+                    <div>
+                        <div class="tools-group-label">Content & Marketing</div>
+                        <div class="tool-row"><span class="tool-name">Canva</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:92%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">CapCut</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:85%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Artlist</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:80%"></div></div></div>
+                        <div class="tool-row"><span class="tool-name">Claude / ChatGPT / Gemini</span><div class="tool-bar-track"><div class="tool-bar-fill" style="width:88%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Certifications</div>
+            <div class="section-content">
+                <div class="cert-list">
+                    <div class="cert-item"><div class="cert-badge">G</div><span class="cert-name">Google Digital Marketing & E-commerce</span></div>
+                    <div class="cert-item"><div class="cert-badge">G</div><span class="cert-name">Start Writing Prompts Like a Pro (Google)</span></div>
+                    <div class="cert-item"><div class="cert-badge">AI</div><span class="cert-name">ChatGPT for Everyone</span></div>
+                    <div class="cert-item"><div class="cert-badge">D</div><span class="cert-name">Speed Up Data Analysis and Presentation Building (Google)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Education</div>
+            <div class="section-content">
+                <div class="edu-item">
+                    <div class="edu-institution">University of Belgrade</div>
+                    <div class="edu-field">Chemical Engineering</div>
+                    <div class="edu-years">2009 — 2017</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-institution">Technical High School Bor</div>
+                    <div class="edu-field">Chemical Engineering · Environmental Chemistry</div>
+                    <div class="edu-years">2005 — 2009</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="section-label">Languages</div>
+            <div class="section-content">
+                <div class="lang-grid">
+                    <div><div class="lang-name">Serbian</div><div class="lang-level">Native</div></div>
+                    <div><div class="lang-name">English</div><div class="lang-level">Professional</div></div>
+                    <div><div class="lang-name">Romanian</div><div class="lang-level">Limited Working</div></div>
+                    <div><div class="lang-name">German</div><div class="lang-level">Elementary</div></div>
+                    <div><div class="lang-name">Polish</div><div class="lang-level">Elementary</div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

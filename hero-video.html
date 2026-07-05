@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Video Case Study — AI Visual Content Creator &middot; Basel</title>
+    <meta name="description" content="A process breakdown by Nevena Mucic, an AI Visual Content Creator in Basel, on directing a multi-scene AI-generated portfolio video using 5+ AI tools, from concept to final loop.">
+    <link rel="canonical" href="/hero-video.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hero Video Case Study — AI Visual Content Creator · Basel">
+    <meta property="og:description" content="A process breakdown by Nevena Mucic, an AI Visual Content Creator in Basel, on directing a multi-scene AI-generated portfolio video using 5+ AI tools, from concept to final loop.">
+    <meta property="og:url" content="/hero-video.html">
+    <meta property="og:image" content="/static/HeroVideo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hero Video Case Study — AI Visual Content Creator · Basel">
+    <meta name="twitter:description" content="A process breakdown by Nevena Mucic, an AI Visual Content Creator in Basel, on directing a multi-scene AI-generated portfolio video using 5+ AI tools, from concept to final loop.">
+    <meta name="twitter:image" content="/static/HeroVideo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links a {
+            color: #999999;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #ffffff; }
+
+        .cs-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 5% 120px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: #999999; }
+        .back-link::before { content: '←'; }
+
+        /* Hero */
+        .cs-hero {
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 60px;
+        }
+
+        .cs-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .cs-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .cs-title em {
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .cs-subtitle {
+            font-size: 0.95rem;
+            color: #777777;
+            line-height: 1.8;
+            max-width: 680px;
+            margin-bottom: 40px;
+        }
+
+        .cs-stat-row {
+            display: flex;
+            gap: 2px;
+        }
+
+        .cs-stat {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 24px 20px;
+        }
+
+        .cs-stat:first-child { border-radius: 8px 0 0 8px; }
+        .cs-stat:last-child { border-radius: 0 8px 8px 0; }
+
+        .cs-stat-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .cs-stat-label {
+            font-size: 0.7rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+
+        /* Sections */
+        .cs-section {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 60px;
+            padding: 52px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: start;
+        }
+
+        .cs-section:last-of-type { border-bottom: none; }
+
+        .cs-section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding-top: 4px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .cs-body p {
+            font-size: 0.95rem;
+            line-height: 1.95;
+            color: #777777;
+            margin-bottom: 18px;
+        }
+
+        .cs-body p:last-child { margin-bottom: 0; }
+        .cs-body p strong { color: #cccccc; font-weight: 400; }
+
+        /* Pull quote */
+        .pull-quote {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+            line-height: 1.6;
+            color: #cccccc;
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 28px;
+            margin: 8px 0 0 0;
+        }
+
+        /* Narrative scenes grid */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2px;
+            margin-bottom: 0;
+        }
+
+        .scene-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 20px 18px;
+        }
+
+        .scene-card:first-child { border-radius: 8px 0 0 8px; }
+        .scene-card:last-child { border-radius: 0 8px 8px 0; }
+
+        .scene-num {
+            font-size: 0.62rem;
+            color: #777777;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .scene-text {
+            font-size: 0.8rem;
+            color: #777777;
+            line-height: 1.55;
+        }
+
+        /* Process steps */
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 22px 22px 22px 0;
+            align-items: start;
+        }
+
+        .process-step:first-child { border-radius: 8px 8px 0 0; padding-top: 24px; }
+        .process-step:last-child { border-radius: 0 0 8px 8px; padding-bottom: 24px; }
+
+        .step-number {
+            width: 40px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 3px;
+            font-size: 0.7rem;
+            color: #777777;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .step-title {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        .step-tool {
+            display: inline-block;
+            font-size: 0.68rem;
+            color: #777777;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 4px;
+            padding: 2px 8px;
+            margin-bottom: 10px;
+            letter-spacing: 0.04em;
+        }
+
+        .step-desc {
+            font-size: 0.82rem;
+            color: #777777;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        /* Expandable prompt */
+        details.prompt-block { margin-top: 6px; }
+
+        details.prompt-block summary {
+            font-size: 0.72rem;
+            color: #777777;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        details.prompt-block summary:hover { color: #777777; }
+        details.prompt-block summary::-webkit-details-marker { display: none; }
+
+        .prompt-arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+            font-size: 0.6rem;
+        }
+
+        details.prompt-block[open] summary .prompt-arrow { transform: rotate(90deg); }
+
+        .prompt-code {
+            margin-top: 10px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            padding: 14px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.72rem;
+            color: #777777;
+            line-height: 1.75;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* Tools pills */
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tool-pill {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #999999;
+        }
+
+        /* Insight box */
+        .insight-box {
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 28px;
+        }
+
+        .insight-box p {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav { padding: 16px 20px; }
+            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            .cs-page { padding: 40px 5% 80px; }
+            .cs-stat-row { flex-direction: column; gap: 2px; }
+            .cs-stat:first-child { border-radius: 8px 8px 0 0; }
+            .cs-stat:last-child { border-radius: 0 0 8px 8px; }
+            .cs-section { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+            .cs-section-label { position: static; }
+            .scenes-grid { grid-template-columns: 1fr 1fr; }
+            .scene-card:first-child,
+            .scene-card:last-child { border-radius: 0; }
+            .scenes-grid .scene-card:first-child { border-radius: 8px 0 0 0; }
+            .process-step { grid-template-columns: 32px 1fr; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#case-studies">Case Studies</a>
+            <a href="/artwork.html">Creative Work</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="cs-page">
+
+        <a href="/#case-studies" class="back-link">All case studies</a>
+
+        <!-- Hero -->
+        <div class="cs-hero">
+            <p class="cs-eyebrow">Case Study · 03 · Process Breakdown</p>
+            <h1 class="cs-title">Hero <em>Video.</em></h1>
+            <p class="cs-subtitle">How I directed a multi-scene AI-generated video for my portfolio — with a clear vision from the start, not trial and error.</p>
+
+            <div class="cs-stat-row">
+                <div class="cs-stat">
+                    <div class="cs-stat-number">8</div>
+                    <div class="cs-stat-label">Production<br>scenes</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">5+</div>
+                    <div class="cs-stat-label">AI tools<br>combined</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">0→1</div>
+                    <div class="cs-stat-label">Concept to<br>final loop</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">1</div>
+                    <div class="cs-stat-label">Clear vision<br>from the start</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Intent -->
+        <div class="cs-section">
+            <div class="cs-section-label">The Intent</div>
+            <div class="cs-body">
+                <div class="pull-quote">
+                    "I didn't experiment my way to this. I had a clear vision and reverse-engineered the tools to execute it."
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Narrative -->
+        <div class="cs-section">
+            <div class="cs-section-label">Visual Narrative</div>
+            <div class="cs-body">
+                <div class="scenes-grid">
+                    <div class="scene-card">
+                        <div class="scene-num">01</div>
+                        <div class="scene-text">A single golden point — the beginning of everything</div>
+                    </div>
+                    <div class="scene-card">
+                        <div class="scene-num">02</div>
+                        <div class="scene-text">Lines emerge and multiply — complexity growing</div>
+                    </div>
+                    <div class="scene-card">
+                        <div class="scene-num">03</div>
+                        <div class="scene-text">An exponential curve — measurable growth</div>
+                    </div>
+                    <div class="scene-card">
+                        <div class="scene-num">04</div>
+                        <div class="scene-text">Particles explode then converge — back to origin</div>
+                    </div>
+                    <div class="scene-card">
+                        <div class="scene-num">05</div>
+                        <div class="scene-text">A human face forms from gold dust — the person behind it all</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process -->
+        <div class="cs-section">
+            <div class="cs-section-label">Process — Step by Step</div>
+            <div class="cs-body">
+                <div class="process-list">
+
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-body">
+                            <div class="step-title">Opening frame — the point of origin</div>
+                            <span class="step-tool">Midjourney v6.1</span>
+                            <p class="step-desc">Generated the start frame: a single luminous matte gold dot on a pure black background. Swiss minimalism, nothing else. This became the visual anchor for everything that follows.</p>
+                            <details class="prompt-block">
+                                <summary><span class="prompt-arrow">▶</span> View prompt</summary>
+                                <div class="prompt-code">A single tiny luminous matte gold dot as a one small point of light on pure black background, extremely minimal, the dot has subtle soft edges as if made of gold dust, centered slightly left of middle and low in the frame, nothing else, pure black (#0F0F0F), matte gold (#C9B99A), Swiss minimalism --ar 16:9 --seed 1808782629 --quality 2 --raw --stylize 300 --v 6.1</div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-body">
+                            <div class="step-title">End frame — the growth curve</div>
+                            <span class="step-tool">Midjourney v8.1</span>
+                            <p class="step-desc">Designed the closing image for the growth sequence: a single ultra-thin matte gold exponential curve, mid-stroke, with subtle ink diffusion at its edges. Luxury restraint, no digital perfection.</p>
+                            <details class="prompt-block">
+                                <summary><span class="prompt-arrow">▶</span> View prompt</summary>
+                                <div class="prompt-code">A single ultra-thin matte gold line (#C9B99A) elegantly curving upward from left to right in a perfect exponential arc, the line is mid-stroke as if being drawn by an invisible brush, extremely minimal composition, vast empty space, deep matte black background (#0F0F0F), the line has subtle ink diffusion texture at its edges slightly soft, not perfectly digital, one tiny cluster of 3-4 faint gold dust particles near the origin point of the line, nothing else, no gradients, no glow, no bokeh, Swiss design sensibility, luxury restraint, 8K --ar 16:9 --raw --stylize 600 --hd --v 8.1</div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-body">
+                            <div class="step-title">First animation — lines emerging from the point</div>
+                            <span class="step-tool">Kling 3.0 via Artlist</span>
+                            <p class="step-desc">Used the start and end frames as anchors in Artlist AI Toolkit. Prompted Kling to animate golden strands slowly spreading and multiplying outward — the first sign of movement and growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-body">
+                            <div class="step-title">Transition — lines becoming an exponential curve</div>
+                            <span class="step-tool">Kling 3.0</span>
+                            <p class="step-desc">Took the last frame of the previous clip and continued the scene — the lines transform into a spiral that slowly uncoils into a single growth curve. Each scene was built on the frame before it.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">05</div>
+                        <div class="step-body">
+                            <div class="step-title">Data appears along the curve</div>
+                            <span class="step-tool">Seedance 2.0</span>
+                            <p class="step-desc">The camera zooms out as the curve continues rising. Gold percentage numbers appear along the line — 28%, 47% — fading in one by one, slowly and elegantly. Data made visible.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">06</div>
+                        <div class="step-body">
+                            <div class="step-title">Explosion and return</div>
+                            <span class="step-tool">Kling 3.0</span>
+                            <p class="step-desc">The chart explodes into thousands of gold dust particles — then reverses. All particles flow back inward toward a single bright point. A moment of chaos resolving into clarity.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">07</div>
+                        <div class="step-body">
+                            <div class="step-title">The face — identity revealed</div>
+                            <span class="step-tool">Nano Banana Pro + Fotogenic + GIMP + Kling 3.0</span>
+                            <p class="step-desc">Generated a portrait made entirely of matte gold dust particles using my own face as reference. Polished it in Fotogenic and GIMP, then animated it with Kling — the face forming slowly from a single golden point of light.</p>
+                            <details class="prompt-block">
+                                <summary><span class="prompt-arrow">▶</span> View prompt</summary>
+                                <div class="prompt-code">Transform this portrait into a close up face made entirely of fine matte gold dust particles (#C9B99A), facial features formed from swirling golden particles, some areas defined others dispersing into dust, deep black background (#0F0F0F), cinematic, elegant, artistic, no other colors except gold and black</div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">08</div>
+                        <div class="step-body">
+                            <div class="step-title">Final edit — connecting the scenes</div>
+                            <span class="step-tool">Canva</span>
+                            <p class="step-desc">Compiled and connected all scenes into one fluid video. Polished transitions, timing, and pacing to create a single seamless loop for the hero section.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Used -->
+        <div class="cs-section">
+            <div class="cs-section-label">Tools Used</div>
+            <div class="cs-body">
+                <div class="tools-grid">
+                    <span class="tool-pill">Midjourney v6.1 + v8.1</span>
+                    <span class="tool-pill">Kling 3.0</span>
+                    <span class="tool-pill">Seedance 2.0</span>
+                    <span class="tool-pill">Artlist AI Toolkit</span>
+                    <span class="tool-pill">Nano Banana Pro</span>
+                    <span class="tool-pill">Fotogenic</span>
+                    <span class="tool-pill">GIMP</span>
+                    <span class="tool-pill">Canva</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- What This Shows -->
+        <div class="cs-section">
+            <div class="cs-section-label">What This Shows</div>
+            <div class="cs-body">
+                <div class="insight-box">
+                    <p>This video wasn't made by prompting and hoping. Every scene was designed with intention — the palette, the motion, the narrative arc. AI tools were the medium. The direction was mine.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

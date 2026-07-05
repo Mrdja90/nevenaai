@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunstzentrum SOKO Case Study — AI Visual Content Creator &middot; Basel</title>
+    <meta name="description" content="How Nevena Mucic, an AI Visual Content Creator in Basel, built an AI-assisted visual identity and data-driven content framework for Kunstzentrum SOKO, lifting engagement 4.4x with a 3.4x reach-to-follower ratio.">
+    <link rel="canonical" href="/soko.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Kunstzentrum SOKO Case Study — AI Visual Content Creator · Basel">
+    <meta property="og:description" content="How Nevena Mucic, an AI Visual Content Creator in Basel, built an AI-assisted visual identity and data-driven content framework for Kunstzentrum SOKO, lifting engagement 4.4x with a 3.4x reach-to-follower ratio.">
+    <meta property="og:url" content="/soko.html">
+    <meta property="og:image" content="/static/Untitled%20design%20(2).png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kunstzentrum SOKO Case Study — AI Visual Content Creator · Basel">
+    <meta name="twitter:description" content="How Nevena Mucic, an AI Visual Content Creator in Basel, built an AI-assisted visual identity and data-driven content framework for Kunstzentrum SOKO, lifting engagement 4.4x with a 3.4x reach-to-follower ratio.">
+    <meta name="twitter:image" content="/static/Untitled%20design%20(2).png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links a {
+            color: #999999;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #ffffff; }
+
+        .cs-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 5% 120px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: #999999; }
+        .back-link::before { content: '←'; }
+
+        .cs-hero {
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 60px;
+        }
+
+        .cs-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .cs-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .cs-title em {
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .cs-subtitle {
+            font-size: 0.85rem;
+            color: #777777;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .cs-intro {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: #777777;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .cs-intro strong {
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        .cs-stat-row {
+            display: flex;
+            gap: 2px;
+            margin-top: 40px;
+        }
+
+        .cs-stat {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 24px 20px;
+        }
+
+        .cs-stat:first-child { border-radius: 8px 0 0 8px; }
+        .cs-stat:last-child { border-radius: 0 8px 8px 0; }
+
+        .cs-stat-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .cs-stat-label {
+            font-size: 0.7rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+
+        .cs-section {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 60px;
+            padding: 52px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: start;
+        }
+
+        .cs-section:last-of-type { border-bottom: none; }
+
+        .cs-section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding-top: 4px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .cs-body p {
+            font-size: 0.95rem;
+            line-height: 1.95;
+            color: #777777;
+            margin-bottom: 18px;
+        }
+
+        .cs-body p:last-child { margin-bottom: 0; }
+
+        .cs-body p strong {
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        /* Roles pills */
+        .deliverables-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .deliverable-pill {
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #999999;
+        }
+
+        /* Before / After comparison table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 32px;
+        }
+
+        .compare-table thead tr {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .compare-table th {
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            padding: 0 16px 14px 0;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        .compare-table td {
+            padding: 14px 16px 14px 0;
+            color: #777777;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: middle;
+        }
+
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { color: #cccccc; }
+
+        .change-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            color: #999999;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 2px 8px;
+        }
+
+        /* Period blocks */
+        .period-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .period-block {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .period-label {
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 16px;
+        }
+
+        .period-stat-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .period-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.82rem;
+        }
+
+        .period-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .period-stat-name { color: #777777; }
+        .period-stat-value { color: #cccccc; }
+
+        .period-gaps {
+            margin-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 16px;
+        }
+
+        .period-gap-item {
+            font-size: 0.78rem;
+            color: #777777;
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .period-gap-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #777777;
+        }
+
+        .period-gap-item.positive::before { color: #777777; }
+
+        /* Top results table */
+        .perf-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .perf-table thead tr {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .perf-table th {
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            padding: 0 16px 14px 0;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        .perf-table td {
+            padding: 14px 16px 14px 0;
+            color: #777777;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: middle;
+        }
+
+        .perf-table tr:last-child td { border-bottom: none; }
+        .perf-table td:first-child { color: #cccccc; }
+        .perf-link { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); transition: border-color 0.3s ease, color 0.3s ease; }
+        .perf-link:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+        .art-direction-video { margin: 20px 0 8px; max-width: 320px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0d0d0d; }
+        .art-direction-video-el { width: 100%; display: block; aspect-ratio: 1 / 1; object-fit: cover; }
+        .art-direction-video-caption { font-size: 0.75rem; color: #777777; font-style: italic; padding: 12px 16px; margin: 0; }
+
+        .standout-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            color: #777777;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 3px 8px;
+            white-space: nowrap;
+        }
+
+        /* New capabilities */
+        .capability-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .capability-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 20px 22px;
+        }
+
+        .capability-item:first-child { border-radius: 8px 8px 0 0; }
+        .capability-item:last-child { border-radius: 0 0 8px 8px; }
+
+        .capability-title {
+            font-size: 0.82rem;
+            color: #cccccc;
+            margin-bottom: 6px;
+        }
+
+        .capability-desc {
+            font-size: 0.78rem;
+            color: #777777;
+            line-height: 1.7;
+        }
+
+        /* Marketing applications */
+        .application-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .application-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 22px;
+        }
+
+        .application-item:nth-child(1) { border-radius: 8px 0 0 0; }
+        .application-item:nth-child(2) { border-radius: 0 8px 0 0; }
+        .application-item:nth-child(5) { border-radius: 0 0 0 8px; }
+        .application-item:nth-child(6) { border-radius: 0 0 8px 0; }
+
+        .application-title {
+            font-size: 0.8rem;
+            color: #cccccc;
+            margin-bottom: 8px;
+        }
+
+        .application-desc {
+            font-size: 0.78rem;
+            color: #777777;
+            line-height: 1.7;
+        }
+
+        /* Insight */
+        .insight-box {
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 28px;
+        }
+
+        .insight-box p {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 12px !important;
+        }
+
+        .insight-box span {
+            font-size: 0.75rem;
+            color: #777777;
+        }
+
+        /* Footnote */
+        .footnote {
+            font-size: 0.72rem;
+            color: #777777;
+            line-height: 1.7;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav { padding: 16px 20px; }
+            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            .cs-page { padding: 40px 5% 80px; }
+            .cs-stat-row { flex-direction: column; gap: 2px; }
+            .cs-stat:first-child { border-radius: 8px 8px 0 0; }
+            .cs-stat:last-child { border-radius: 0 0 8px 8px; }
+            .cs-section { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+            .cs-section-label { position: static; }
+            .period-grid { grid-template-columns: 1fr; }
+            .application-grid { grid-template-columns: 1fr; }
+            .application-item:nth-child(1),
+            .application-item:nth-child(2),
+            .application-item:nth-child(5),
+            .application-item:nth-child(6) { border-radius: 0; }
+            .application-item:first-child { border-radius: 8px 8px 0 0; }
+            .application-item:last-child { border-radius: 0 0 8px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#case-studies">Case Studies</a>
+            <a href="/artwork.html">Creative Work</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="cs-page">
+
+        <a href="/#case-studies" class="back-link">All case studies</a>
+
+        <!-- Hero -->
+        <div class="cs-hero">
+            <p class="cs-eyebrow">Case Study · 01</p>
+            <h1 class="cs-title">Kunstzentrum <em>SOKO</em></h1>
+            <p class="cs-subtitle">Instagram Growth Strategy · Basel, Switzerland · Oct 2024 – Mar 2026 · Nonprofit cultural center · Serbian diaspora community · Completed engagement</p>
+
+            <p class="cs-intro">
+                Freelance creative and content strategy role for a nonprofit cultural center. Working primarily with <strong>amateur mobile footage and photos</strong>, I designed event visuals, developed an AI-assisted visual identity including a branded video outro, and built a <strong>data-driven content framework from scratch</strong> — resulting in a 4.4× engagement lift and a reach that consistently exceeded the follower base by 3.4×.
+            </p>
+
+            <div class="cs-stat-row">
+                <div class="cs-stat">
+                    <div class="cs-stat-number">4.4×</div>
+                    <div class="cs-stat-label">Avg. likes<br>per post</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">3.4×</div>
+                    <div class="cs-stat-label">Reach vs.<br>followers</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">9.9%</div>
+                    <div class="cs-stat-label">Peak engagement<br>rate</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">28K+</div>
+                    <div class="cs-stat-label">Peak views<br>single campaign</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roles covered -->
+        <div class="cs-section">
+            <div class="cs-section-label">Roles Covered</div>
+            <div class="cs-body">
+                <div class="deliverables-grid">
+                    <span class="deliverable-pill">Visual &amp; Graphic Design</span>
+                    <span class="deliverable-pill">Content Strategy</span>
+                    <span class="deliverable-pill">AI Art Direction</span>
+                    <span class="deliverable-pill">Video Concept &amp; Production</span>
+                    <span class="deliverable-pill">Photography &amp; Filming</span>
+                    <span class="deliverable-pill">Analytics &amp; Reporting</span>
+                    <span class="deliverable-pill">Brand Development</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem & Goal -->
+        <div class="cs-section">
+            <div class="cs-section-label">Problem &amp; Goal</div>
+            <div class="cs-body">
+                <p><strong>Problem:</strong> Kunstzentrum SOKO had an Instagram presence with no visual identity, no content strategy, and no analytics. Posts were published ad-hoc, engagement was unpredictable. Source material consistently consisted of <strong>low-quality mobile footage and amateur photography</strong> — no professional assets were available.</p>
+                <p><strong>Goal:</strong> Establish a recognizable visual presence and grow audience engagement, within the constraints of a <strong>nonprofit budget and limited raw material</strong>. Both visual identity and content strategy needed to be built from scratch.</p>
+            </div>
+        </div>
+
+        <!-- Tools & Outputs -->
+        <div class="cs-section">
+            <div class="cs-section-label">Tools &amp; Outputs</div>
+            <div class="cs-body">
+                <p style="margin-bottom: 16px; font-size: 0.8rem; color: #777777; text-transform: uppercase; letter-spacing: 0.1em;">Tools used</p>
+                <div class="deliverables-grid" style="margin-bottom: 28px;">
+                    <span class="deliverable-pill">Canva</span>
+                    <span class="deliverable-pill">CapCut</span>
+                    <span class="deliverable-pill">Midjourney</span>
+                    <span class="deliverable-pill">Nano Banana Pro</span>
+                    <span class="deliverable-pill">Veo 3</span>
+                    <span class="deliverable-pill">Zeemo.ai</span>
+                    <span class="deliverable-pill">Instagram Insights</span>
+                </div>
+                <p style="margin-bottom: 16px; font-size: 0.8rem; color: #777777; text-transform: uppercase; letter-spacing: 0.1em;">Outputs delivered</p>
+                <div class="deliverables-grid">
+                    <span class="deliverable-pill">Event Posters &amp; Graphics</span>
+                    <span class="deliverable-pill">Reels &amp; Video Content</span>
+                    <span class="deliverable-pill">Carousels</span>
+                    <span class="deliverable-pill">AI-Generated Visuals</span>
+                    <span class="deliverable-pill">Branded Video Outro</span>
+                    <span class="deliverable-pill">Full Analytics Framework</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before vs After -->
+        <div class="cs-section">
+            <div class="cs-section-label">Before vs. After</div>
+            <div class="cs-body">
+                <table class="compare-table" style="margin-bottom: 32px;">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Before</th>
+                            <th>After</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Avg. likes per post</td>
+                            <td>9.8</td>
+                            <td>42.9</td>
+                            <td><span class="change-badge">4.4×</span></td>
+                        </tr>
+                        <tr>
+                            <td>Engagement rate</td>
+                            <td>— (not tracked)</td>
+                            <td>3.2%</td>
+                            <td><span class="change-badge">Baseline set</span></td>
+                        </tr>
+                        <tr>
+                            <td>Posts published</td>
+                            <td>12 / 10 months</td>
+                            <td>24 / 8 months</td>
+                            <td><span class="change-badge">2.5× output</span></td>
+                        </tr>
+                        <tr>
+                            <td>Performance range</td>
+                            <td>2–24 likes</td>
+                            <td>16–110 likes</td>
+                            <td><span class="change-badge">Floor lifted</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="period-grid">
+                    <div class="period-block">
+                        <div class="period-label">Before · Oct 2024 – Jul 2025</div>
+                        <div class="period-stat-row">
+                            <div class="period-stat"><span class="period-stat-name">Text / poster</span><span class="period-stat-value">3.4 avg. likes</span></div>
+                            <div class="period-stat"><span class="period-stat-name">Video / Reels (general)</span><span class="period-stat-value">13.5 avg. likes</span></div>
+                            <div class="period-stat"><span class="period-stat-name">Video &mdash; featured performer</span><span class="period-stat-value">18 avg. likes</span></div>
+                            <div class="period-stat"><span class="period-stat-name">Video · live performance</span><span class="period-stat-value">23 avg. likes</span></div>
+                        </div>
+                        <div class="period-gaps">
+                            <div class="period-gap-item">No reach, views, or demographics tracked</div>
+                            <div class="period-gap-item">Featured performer uplift signal (2–7×) unrecognized</div>
+                            <div class="period-gap-item">Events promoted same-day or last-minute</div>
+                            <div class="period-gap-item">No posting rhythm or content calendar</div>
+                            <div class="period-gap-item">Format performance never compared</div>
+                        </div>
+                    </div>
+                    <div class="period-block">
+                        <div class="period-label">After · Aug 2025 – Mar 2026</div>
+                        <div class="period-stat-row">
+                            <div class="period-stat"><span class="period-stat-name">Carousels (6 posts)</span><span class="period-stat-value">56.3 avg. likes</span></div>
+                            <div class="period-stat"><span class="period-stat-name">Video / Reels (11 posts)</span><span class="period-stat-value">36.5 avg. likes</span></div>
+                            <div class="period-stat"><span class="period-stat-name">Photo / Posters (7 posts)</span><span class="period-stat-value">55.9 avg. likes</span></div>
+                        </div>
+                        <div class="period-gaps">
+                            <div class="period-gap-item positive">Performer-led content: featured performers → ER ~1% to 9.9%</div>
+                            <div class="period-gap-item positive">Advance timing: 2–3 week window → 30× reach</div>
+                            <div class="period-gap-item positive">Segmentation: 68% female; 70% non-follower reach</div>
+                            <div class="period-gap-item positive">Format mix: carousels +75% views vs. single posts</div>
+                            <div class="period-gap-item positive">AI identity: branded outro + AI-generated creatives</div>
+                        </div>
+                        <p style="font-size: 0.72rem; color: #777777; margin-top: 14px;">Format mix: 40% carousel · 35% reel · 25% photo — intentionally optimized.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Results -->
+        <div class="cs-section">
+            <div class="cs-section-label">Top Results</div>
+            <div class="cs-body">
+                <div class="perf-table-wrap">
+                <table class="perf-table">
+                    <thead>
+                        <tr>
+                            <th>Post</th>
+                            <th>Likes</th>
+                            <th>Views</th>
+                            <th>Standout metric</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://www.instagram.com/reel/DRNrA8pjOMv/?igsh=MTJsdXFjYWx6bGRqeA==" target="_blank" rel="noopener noreferrer" class="perf-link">Veštica na sudu — AI reel (Nov 2025)</a></td>
+                            <td>95</td>
+                            <td>4,482</td>
+                            <td><span class="standout-badge">9.9% ER — highest engagement rate</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.instagram.com/p/DUy0LP-DAuO/?igsh=MTljdDFncTI5Y2hmbg%3D%3D" target="_blank" rel="noopener noreferrer" class="perf-link">LINA — Monodrama poster (Feb 2026)</a></td>
+                            <td>83</td>
+                            <td>3,063</td>
+                            <td><span class="standout-badge">1.22% profile activity — best conversion</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.instagram.com/reel/DUrIvJzjLq9/?igsh=MTliN2V4aHI5NmNiZA==" target="_blank" rel="noopener noreferrer" class="perf-link">Balkan Vocal Workshop series (Sep 2025)</a></td>
+                            <td>51–99</td>
+                            <td>28,000+</td>
+                            <td><span class="standout-badge">10,315 reach — biggest campaign</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Capabilities Established -->
+        <div class="cs-section">
+            <div class="cs-section-label">New Capabilities Established</div>
+            <div class="cs-body">
+                <div class="capability-list">
+                    <div class="capability-item">
+                        <div class="capability-title">Reach per post — avg. 1,258 (3.4× follower count)</div>
+                        <div class="capability-desc">Platform-split follower vs. non-follower reach tracked per post. Enables growth targeting beyond the existing base.</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-title">Views per post — avg. 3,124 · peak 28,000+</div>
+                        <div class="capability-desc">View data now drives format decisions. Carousels consistently outperform single posts by ~75%.</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-title">Audience demographics — 69% female, cultural segment</div>
+                        <div class="capability-desc">First demographic profile of SOKO's audience — informs content tone, format, and campaign framing.</div>
+                    </div>
+                    <div class="capability-item">
+                        <div class="capability-title">Conversion signals — link clicks, profile visits, follows</div>
+                        <div class="capability-desc">Connects content to real audience action. Example: LINA poster — 5 link clicks + 6 profile visits + 2 follows.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Art Direction -->
+        <div class="cs-section">
+            <div class="cs-section-label">Art Direction</div>
+            <div class="cs-body">
+                <p><strong>Self-directed creative within nonprofit constraints.</strong> No fixed creative brief from the client — direction was largely self-initiated, adapting to each event's tone and available material.</p>
+                <p><strong>Cultural authenticity meets contemporary aesthetic.</strong> Each visual balanced the cultural heritage of the Serbian diaspora community with a clean, modern look to elevate low-quality source material.</p>
+                <p><strong>Consistent brand identity built over time.</strong> A branded AI-generated video outro (produced in Veo and Midjourney) became a recognizable identity marker across all video content — the first consistent brand element SOKO had.</p>
+                <div class="art-direction-video">
+                    <video autoplay loop muted playsinline class="art-direction-video-el">
+                        <source src="/static/soko-falcon-outro.mp4" type="video/mp4">
+                    </video>
+                    <p class="art-direction-video-caption">The branded outro &mdash; SOKO's golden falcon, now a recognizable closing signature across all video content.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing Applications -->
+        <div class="cs-section">
+            <div class="cs-section-label">Marketing Applications</div>
+            <div class="cs-body">
+                <div class="application-grid">
+                    <div class="application-item">
+                        <div class="application-title">Constraint-driven creativity</div>
+                        <div class="application-desc">Consistent on-brand content with no professional assets — directly applicable to startups, nonprofits, or lean teams without photography or video budgets.</div>
+                    </div>
+                    <div class="application-item">
+                        <div class="application-title">Full-funnel content thinking</div>
+                        <div class="application-desc">From awareness (reach beyond follower base) to conversion (profile visits, link clicks, follows) — not just vanity metrics.</div>
+                    </div>
+                    <div class="application-item">
+                        <div class="application-title">AI integration in production</div>
+                        <div class="application-desc">Practical use of AI image and video tools to close the gap between limited resources and professional output.</div>
+                    </div>
+                    <div class="application-item">
+                        <div class="application-title">Analytics as a creative feedback loop</div>
+                        <div class="application-desc">Strategy adjusted based on real performance data — featured performer content, format mix, advance timing — not intuition.</div>
+                    </div>
+                    <div class="application-item">
+                        <div class="application-title">Brand building from zero</div>
+                        <div class="application-desc">Developed a recognizable visual identity for an organization that had none — applicable to any early-stage brand or product launch.</div>
+                    </div>
+                </div>
+
+                <p class="footnote">Note on data transparency: Whether individual posts were boosted with paid promotion was not disclosed to me. All metrics reflect account-level reported data. Organic vs. paid breakdown is unknown — results should be interpreted with that caveat in mind.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Visual Content Creator &middot; Basel | Nevena Mucic</title>
+    <meta name="description" content="Nevena Mucic is an AI Visual Content Creator based in Basel, Switzerland — specializing in AI image generation, AI video production, and social media content for brands.">
+    <link rel="canonical" href="/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Visual Content Creator · Basel | Nevena Mucic">
+    <meta property="og:description" content="Nevena Mucic is an AI Visual Content Creator based in Basel, Switzerland — specializing in AI image generation, AI video production, and social media content for brands.">
+    <meta property="og:url" content="/">
+    <meta property="og:image" content="/static/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Visual Content Creator · Basel | Nevena Mucic">
+    <meta name="twitter:description" content="Nevena Mucic is an AI Visual Content Creator based in Basel, Switzerland — specializing in AI image generation, AI video production, and social media content for brands.">
+    <meta name="twitter:image" content="/static/profile.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nevena Mucic",
+        "jobTitle": "AI Visual Content Creator",
+        "url": "/",
+        "image": "/static/profile.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "CH"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/nevenamucic"
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="static/custom.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .hero-section, .services-section, .case-studies-section { opacity: 0; transition: opacity 0.2s ease; }
+        .fonts-loaded .hero-section, .fonts-loaded .services-section, .fonts-loaded .case-studies-section { opacity: 1; }
+
+        /* Services section */
+        .services-section { padding: 80px 5%; }
+        .services-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+        .services-label { font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+
+        /* Artwork & Book Covers teaser — see .creative-teaser-section below */
+    
+        /* Book covers teaser */
+        .creative-teaser-section { padding: 80px 5%; }
+        .creative-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .creative-block-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
+        .creative-block-label { font-size: 1.15rem; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 10px; }
+        .creative-block-title { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #999999; line-height: 1.5; }
+        .creative-block-title em { font-weight: 400; font-style: italic; }
+        .creative-block-link { font-size: 0.78rem; color: #777777; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 30px; white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0; margin-left: 20px; }
+        .creative-block-link:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+        /* Painting grid (left block) */
+        .painting-mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .painting-mini-item { display: block; overflow: hidden; border-radius: 6px; aspect-ratio: 3/4; background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); transform: scale(1) translateY(0); transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1); }
+        .painting-mini-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .painting-mini-item:hover { border-color: rgba(255,255,255,0.45); transform: scale(1.03) translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+
+        /* Book covers grid (right block) */
+        .book-mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .book-mini-item { display: block; overflow: hidden; border-radius: 6px; aspect-ratio: 3/4; background: #111; border: 1px solid rgba(255,255,255,0.08); transform: scale(1) translateY(0); transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1); position: relative; }
+        .book-mini-item img { position: absolute; top: -1px; left: -1px; width: calc(100% + 2px); height: calc(100% + 2px); object-fit: cover; object-position: center top; display: block; }
+        .book-mini-item.adjust-crop img { object-position: center 25%; }
+        .book-mini-item:hover { border-color: rgba(255,255,255,0.45); transform: scale(1.03) translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+
+        @media (max-width: 900px) {
+            .creative-blocks { grid-template-columns: 1fr; gap: 60px; }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .services-section { padding: 48px 5%; }
+            .creative-teaser-section { padding: 48px 5%; }
+            .pill { padding: 10px 12px; font-size: 0.8rem; height: 54px; }
+        }
+    </style>
+    <script>
+        document.fonts.ready.then(() => document.documentElement.classList.add('fonts-loaded'));
+    </script>
+    <link rel="preload" as="image" href="/static/signature.png?v=2">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="about.html">About</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="artwork.html">Creative Work</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <video autoplay loop muted playsinline class="hero-bg-video">
+            <source src="/static/background.mp4" type="video/mp4">
+        </video>
+        <div class="glow-effect"></div>
+        <div class="hero-content">
+            <div class="hero-text-block">
+                <h1 class="hero-headline bold-serif">AI Visual Content Creator</h1>
+                <p class="hero-tagline-row">Engineering Logic</p>
+                <p class="hero-tagline-row italic-serif">Artistic Soul</p>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <div class="hero-description">
+                <p>Analytical by training.</p>
+                <p>Creative by nature.</p>
+            </div>
+            <div class="hero-signature">
+                <img src="/static/signature.png?v=2" alt="Nevena M" fetchpriority="high">
+            </div>
+        </div>
+    </main>
+
+    <section class="services-section">
+        <div class="services-header">
+            <span class="services-label">Services</span>
+        </div>
+        <div class="services-grid">
+            <div class="pill">AI Image Generation</div>
+            <div class="pill">AI Video Production</div>
+            <div class="pill">Video Editing</div>
+            <div class="pill">Social Media Content Creation</div>
+            <div class="pill">Organic Reach Growth</div>
+            <div class="pill">Campaign &amp; Brand Visuals</div>
+            <div class="pill">Content Strategy</div>
+            <div class="pill">Prompt Engineering Services</div>
+        </div>
+    </section>
+
+    <section class="case-studies-section" id="case-studies">
+        <h2 class="section-title">Case Studies</h2>
+        <div class="case-studies-grid">
+
+            <a href="/soko.html" class="case-card bg-card-01">
+                <div class="card-content">
+                    <span class="card-meta">CASE STUDY &bull; 01</span>
+                    <div class="card-header">
+                        <h2>Kunstzentrum Soko</h2>
+                        <p>Instagram content &amp; AI video production for a cultural arts center in Basel</p>
+                    </div>
+                </div>
+                <div class="stat-bar">
+                    <div class="data-grid">
+                        <div class="data-item"><span>9.6K</span><label>Views</label></div>
+                        <div class="data-item"><span>14+</span><label>Camp.</label></div>
+                        <div class="data-item"><span>50+</span><label>Posts</label></div>
+                    </div>
+                    <div class="action-link">View case study &rarr;</div>
+                </div>
+            </a>
+
+            <a href="/netzwerkpro.html" class="case-card bg-card-02">
+                <div class="card-content">
+                    <span class="card-meta">CASE STUDY &bull; 02</span>
+                    <div class="card-header">
+                        <h2>NetzwerkPRO</h2>
+                        <p>AI-generated visuals for a business coach &mdash; measurable organic growth</p>
+                    </div>
+                </div>
+                <div class="stat-bar">
+                    <div class="data-grid">
+                        <div class="data-item"><span>545%</span><label>Reach</label></div>
+                        <div class="data-item"><span>234</span><label>Views</label></div>
+                        <div class="data-item"><span>0 CHF</span><label>Paid</label></div>
+                    </div>
+                    <div class="action-link">View case study &rarr;</div>
+                </div>
+            </a>
+
+            <a href="/hero-video.html" class="case-card bg-card-03">
+                <div class="card-content">
+                    <span class="card-meta">CASE STUDY &bull; 03</span>
+                    <div class="card-header">
+                        <h2>Hero Video</h2>
+                        <p>Behind the scenes &mdash; how the portfolio hero video was conceived &amp; produced</p>
+                    </div>
+                </div>
+                <div class="stat-bar">
+                    <div class="data-grid">
+                        <div class="data-item"><span>5+</span><label>Tools</label></div>
+                        <div class="data-item"><span>8</span><label>Scenes</label></div>
+                        <div class="data-item"><span>0&rarr;1</span><label>Final</label></div>
+                    </div>
+                    <div class="action-link">View process &rarr;</div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="mask-left"></div>
+        <div class="mask-right"></div>
+        <div class="marquee-track" id="marqueeTrack">
+            <span class="marquee-item">- MIDJOURNEY -</span>
+            <span class="marquee-item">- KLING -</span>
+            <span class="marquee-item">- VEO -</span>
+            <span class="marquee-item">- SORA -</span>
+            <span class="marquee-item">- SEEDANCE -</span>
+            <span class="marquee-item">- FLUX -</span>
+            <span class="marquee-item">- IDEOGRAM -</span>
+            <span class="marquee-item">- NANO BANANA -</span>
+            <span class="marquee-item">- CANVA -</span>
+            <span class="marquee-item">- CAPCUT -</span>
+        </div>
+    </div>
+
+    <section class="showreel-section">
+        <div class="showreel-inner">
+            <div class="showreel-copy">
+                <span class="showreel-label">See it in motion</span>
+                <h2 class="showreel-title">A glimpse into how the work comes together.</h2>
+                <p class="showreel-desc">A short AI-generated promo, concept to final cut &mdash; the same process behind every client project.</p>
+            </div>
+            <div class="showreel-video-frame">
+                <video autoplay loop muted playsinline class="showreel-video-el" poster="static/showreel-poster.jpg">
+                    <source src="static/nevena-promo-reel.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="creative-teaser-section">
+        <div class="creative-blocks">
+
+            <!-- Block 1: Artwork / Paintings -->
+            <div class="creative-block">
+                <div class="creative-block-header">
+                    <div>
+                        <p class="creative-block-label">Original Paintings</p>
+                        <h2 class="creative-block-title">The work <em>behind the work.</em></h2>
+                    </div>
+                    <a href="/artwork.html" class="creative-block-link">View all &rarr;</a>
+                </div>
+                <div class="painting-mini-grid">
+                    <a href="/artwork.html" class="painting-mini-item">
+                        <img src="/static/artwork/paintings/teaser/A symphony for her 50x50.jpg" alt="A Symphony for Her" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html" class="painting-mini-item">
+                        <img src="/static/artwork/paintings/teaser/Accept yourself 100x70.jpg" alt="Accept Yourself" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html" class="painting-mini-item">
+                        <img src="/static/artwork/paintings/teaser/Rebirth 100x70.jpg" alt="Rebirth" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html" class="painting-mini-item">
+                        <img src="/static/artwork/paintings/teaser/Swan 50x40.jpg" alt="Swan" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Block 2: Book Covers -->
+            <div class="creative-block">
+                <div class="creative-block-header">
+                    <div>
+                        <p class="creative-block-label">Book Cover Illustration</p>
+                        <h2 class="creative-block-title">Between the <em>poem and the page.</em></h2>
+                    </div>
+                    <a href="/artwork.html#book-covers" class="creative-block-link">View all &rarr;</a>
+                </div>
+                <div class="book-mini-grid">
+                    <a href="/artwork.html#book-covers" class="book-mini-item adjust-crop">
+                        <img src="/static/artwork/covers/drag-1-cover.png" alt="The Poetry of Love and Longing" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html#book-covers" class="book-mini-item adjust-crop">
+                        <img src="/static/artwork/covers/drag-2-cover.png" alt="The Poetry of Love and Longing II" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html#book-covers" class="book-mini-item">
+                        <img src="/static/artwork/covers/drag-3-cover.png" alt="The Poetry of Love and Longing III" loading="lazy" decoding="async">
+                    </a>
+                    <a href="/artwork.html#book-covers" class="book-mini-item">
+                        <img src="/static/artwork/covers/kasi-cover.png" alt="Folk Poems of the Hearth" loading="lazy" decoding="async">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">What clients say.</h2>
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <p>&ldquo;My biggest challenge was finding an artist who could truly translate my ideas onto the page &mdash; someone willing to listen without imposing their own vision. Working with Nevena was a genuine breath of fresh air. She didn&rsquo;t just hear my ideas; she understood them. Despite the natural uncertainty of whether everything would come together, she showed remarkable intuition, incorporating every revision so seamlessly that the final result exceeded what I had originally imagined. Every illustration, every cover fits the title and content of the book perfectly &mdash; and at the same time tells its own story. Our professional collaboration grew into a friendship built on mutual respect and trust. Working with her is a real pleasure: no stress, just a shared commitment to making every piece as good as it can possibly be.&rdquo;</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">Nemanja Ispirovi&#263;</div>
+                    <div class="testimonial-role">Author</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <p>&ldquo;Before working with Nevena, I had no idea how to run a successful marketing campaign or create quality content. Through our collaboration I learned what a carousel is, how to structure content around a clear message, and just how powerful AI can be in content creation. The results spoke for themselves &mdash; the first thing people I work with now notice is my marketing, and once they see how professionally it&rsquo;s handled, there&rsquo;s no hesitation about trusting me. Our communication has been remarkable. No matter how many revisions or new requests I had, Nevena handled every single one with endless patience. What&rsquo;s truly extraordinary is that she was always the one chasing me to get things finished &mdash; delivering everything on tight deadlines without ever making me feel rushed. It is a genuine privilege that our paths crossed, and that we got to collaborate on something so creatively fulfilling &mdash; because creativity is Nevena&rsquo;s greatest gift.&rdquo;</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">Andrijana Adamovi&#263;</div>
+                    <div class="testimonial-role">Kunstzentrum SOKO</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <p>&ldquo;When I first reached out to Nevena, I simply didn&rsquo;t have the time, inspiration, or energy to keep up with Instagram content for the women&rsquo;s community I founded. She solved that by taking my ideas and feedback from the group and turning them into genuinely engaging posts &mdash; both AI visuals and copy. The communication and collaboration were excellent from start to finish, and I was very happy with her whole approach and way of working; some of the visuals and edits she created I still use to this day. I&rsquo;m grateful for her patience, and for how she managed to turn every scattered thought of mine into something useful and genuinely appealing for social media. I would absolutely work with Nevena again, and I recommend her without hesitation.&rdquo;</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-name">Ana Miloradovi&#263;</div>
+                    <div class="testimonial-role">NetzwerkPRO</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div class="contact-text">
+                <h2 class="contact-heading">Let&rsquo;s work together.</h2>
+                <p class="contact-sub">Actively seeking a full-time role in AI visual content, AI marketing content, or brand strategy, based in Basel. Also open to part-time and freelance engagements.</p>
+                <p class="contact-location">&#128205; Based in Basel, Switzerland &nbsp;&middot;&nbsp; Open to remote</p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:nevenamucic@yahoo.com" class="contact-btn">nevenamucic@yahoo.com</a>
+                <a href="https://www.linkedin.com/in/nevenamucic" target="_blank" rel="noopener" class="contact-btn">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ── JS Marquee ──
+        (function() {
+            const track = document.getElementById('marqueeTrack');
+            const speed = 0.6;
+            const copies = 6;
+            const baseHTML = track.innerHTML;
+            let html = '';
+            for (let c = 0; c < copies; c++) { html += baseHTML; }
+            track.innerHTML = html;
+            let pos = 0;
+            const setWidth = () => track.scrollWidth / copies;
+            function tick() {
+                pos -= speed;
+                if (Math.abs(pos) >= setWidth()) pos += setWidth();
+                track.style.transform = 'translateX(' + pos + 'px)';
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        })();
+
+    </script>
+
+</body>
+</html>

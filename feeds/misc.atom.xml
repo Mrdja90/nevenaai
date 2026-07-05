@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Nevena Mucic AI - misc</title><link href="/" rel="alternate"/><link href="/feeds/misc.atom.xml" rel="self"/><id>/</id><updated>2026-06-12T00:00:00+02:00</updated><entry><title>Home</title><link href="/blog/home.html" rel="alternate"/><published>2026-06-12T00:00:00+02:00</published><updated>2026-06-12T00:00:00+02:00</updated><author><name>Nevena Mucic</name></author><id>tag:None,2026-06-12:/blog/home.html</id><content type="html">&lt;div class="hero"&gt;
+    &lt;h1&gt;ENGINEERING LOGIC.&lt;/h1&gt;
+    &lt;h1 class="italic"&gt;Artistic Soul.&lt;/h1&gt;
+    &lt;h1 class="faded"&gt;AI VISUALS.&lt;/h1&gt;
+    &lt;p&gt;Strategic creativity powered by artificial intelligence&lt;/p&gt;
+    &lt;p&gt;Bridging the gap between technical logic and creative vision&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="marquee-container"&gt;
+    &lt;div class="marquee"&gt;
+        &lt;span&gt;- ARTLIST -&lt;/span&gt; &lt;span&gt;- MIDJOURNEY -&lt;/span&gt; &lt;span&gt;- KLING -&lt;/span&gt; 
+        &lt;span&gt;- VEO -&lt;/span&gt; &lt;span&gt;- CANVA -&lt;/span&gt; &lt;span&gt;- CAPCUT -&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</content><category term="misc"/></entry></feed>

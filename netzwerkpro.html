@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetzwerkPRO Case Study — AI Visual Content Creator &middot; Basel</title>
+    <meta name="description" content="How Nevena Mucic, an AI Visual Content Creator based in Basel, built an Instagram content strategy for NetzwerkPRO with 0 CHF in ad spend, driving a 545% increase in daily reach through AI-assisted visuals.">
+    <link rel="canonical" href="/netzwerkpro.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NetzwerkPRO Case Study — AI Visual Content Creator · Basel">
+    <meta property="og:description" content="How Nevena Mucic, an AI Visual Content Creator based in Basel, built an Instagram content strategy for NetzwerkPRO with 0 CHF in ad spend, driving a 545% increase in daily reach through AI-assisted visuals.">
+    <meta property="og:url" content="/netzwerkpro.html">
+    <meta property="og:image" content="/static/NetzwerkPro%20logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NetzwerkPRO Case Study — AI Visual Content Creator · Basel">
+    <meta name="twitter:description" content="How Nevena Mucic, an AI Visual Content Creator based in Basel, built an Instagram content strategy for NetzwerkPRO with 0 CHF in ad spend, driving a 545% increase in daily reach through AI-assisted visuals.">
+    <meta name="twitter:image" content="/static/NetzwerkPro%20logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body, html {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-links a {
+            color: #999999;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #ffffff; }
+
+        /* Page wrapper */
+        .cs-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 5% 120px;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: #999999; }
+        .back-link::before { content: '←'; }
+
+        /* Hero */
+        .cs-hero {
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 60px;
+        }
+
+        .cs-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .cs-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .cs-title em {
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .cs-subtitle {
+            font-size: 0.85rem;
+            color: #777777;
+            letter-spacing: 0.05em;
+            margin-bottom: 40px;
+        }
+
+        /* Stat row */
+        .cs-stat-row {
+            display: flex;
+            gap: 2px;
+            margin-top: 40px;
+        }
+
+        .cs-stat {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 24px 20px;
+        }
+
+        .cs-stat:first-child { border-radius: 8px 0 0 8px; }
+        .cs-stat:last-child { border-radius: 0 8px 8px 0; }
+
+        .cs-stat-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .cs-stat-label {
+            font-size: 0.7rem;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+        }
+
+        /* Sections */
+        .cs-section {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 60px;
+            padding: 52px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            align-items: start;
+        }
+
+        .cs-section:last-of-type { border-bottom: none; }
+
+        .cs-section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding-top: 4px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .cs-body p {
+            font-size: 0.95rem;
+            line-height: 1.95;
+            color: #777777;
+            margin-bottom: 18px;
+        }
+
+        .cs-body p:last-child { margin-bottom: 0; }
+
+        .cs-body p strong {
+            color: #cccccc;
+            font-weight: 400;
+        }
+
+        /* Deliverables pills */
+        .deliverables-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .deliverable-pill {
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #999999;
+        }
+
+        /* Before/after comparison */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin-bottom: 32px;
+        }
+
+        .ba-cell {
+            padding: 28px 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .ba-cell:first-child { border-radius: 8px 0 0 8px; }
+        .ba-cell:last-child { border-radius: 0 8px 8px 0; }
+
+        .ba-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 12px;
+        }
+
+        .ba-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .ba-number.after { color: #fff; }
+        .ba-number.before { color: #777777; }
+
+        .ba-desc {
+            font-size: 0.75rem;
+            color: #777777;
+        }
+
+        .growth-callout {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .growth-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .growth-desc {
+            font-size: 0.85rem;
+            color: #777777;
+            line-height: 1.7;
+        }
+
+        /* Performance table */
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .perf-table thead tr {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .perf-table th {
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #777777;
+            padding: 0 16px 14px 0;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        .perf-table td {
+            padding: 14px 16px 14px 0;
+            color: #777777;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: middle;
+        }
+
+        .perf-table tr:last-child td { border-bottom: none; }
+
+        .perf-table td:first-child { color: #cccccc; }
+
+        .post-type-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #777777;
+            white-space: nowrap;
+        }
+
+        .post-type-badge.ai { border-color: rgba(255,255,255,0.2); color: #999999; }
+
+        .bar-cell { width: 120px; }
+
+        .mini-bar-track {
+            height: 2px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 1px;
+            margin-top: 6px;
+        }
+
+        .mini-bar-fill {
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 1px;
+        }
+
+        /* Key insight */
+        .insight-box {
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 28px;
+            margin-top: 8px;
+        }
+
+        .insight-box p {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 12px !important;
+        }
+
+        .insight-box span {
+            font-size: 0.75rem;
+            color: #777777;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-nav { padding: 16px 20px; }
+            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            .cs-page { padding: 40px 5% 80px; }
+            .cs-stat-row { flex-direction: column; gap: 2px; }
+            .cs-stat:first-child { border-radius: 8px 8px 0 0; }
+            .cs-stat:last-child { border-radius: 0 0 8px 8px; }
+            .cs-section { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+            .cs-section-label { position: static; }
+            .before-after { grid-template-columns: 1fr; gap: 2px; }
+            .ba-cell:first-child { border-radius: 8px 8px 0 0; }
+            .ba-cell:last-child { border-radius: 0 0 8px 8px; }
+            .growth-callout { flex-direction: column; gap: 12px; }
+            .perf-table { font-size: 0.75rem; }
+            .bar-cell { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#case-studies">Case Studies</a>
+            <a href="/artwork.html">Creative Work</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="cs-page">
+
+        <a href="/#case-studies" class="back-link">All case studies</a>
+
+        <!-- Hero -->
+        <div class="cs-hero">
+            <p class="cs-eyebrow">Case Study · 02</p>
+            <h1 class="cs-title">Netzwerk<em>PRO</em></h1>
+            <p class="cs-subtitle">Business development coaching · Basel, Switzerland · Instagram content strategy</p>
+
+            <div class="cs-stat-row">
+                <div class="cs-stat">
+                    <div class="cs-stat-number">+545%</div>
+                    <div class="cs-stat-label">Daily reach<br>increase</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">234</div>
+                    <div class="cs-stat-label">Peak views<br>per day</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">0 CHF</div>
+                    <div class="cs-stat-label">Paid<br>advertising</div>
+                </div>
+                <div class="cs-stat">
+                    <div class="cs-stat-number">13×</div>
+                    <div class="cs-stat-label">Above pre-<br>collaboration baseline</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overview -->
+        <div class="cs-section">
+            <div class="cs-section-label">Overview</div>
+            <div class="cs-body">
+                <p>
+                    NetzwerkPRO is a Swiss business development coaching brand targeting <strong>ambitious women entrepreneurs in Switzerland and Serbia</strong>. The client needed a consistent, high-performing Instagram presence that combined authority positioning with emotional storytelling — reaching a niche diaspora audience.
+                </p>
+                <p>
+                    I took <strong>full creative and strategic ownership</strong>: copywriting, AI image generation, video content, and publishing strategy — all produced end-to-end.
+                </p>
+            </div>
+        </div>
+
+        <!-- The Challenge -->
+        <div class="cs-section">
+            <div class="cs-section-label">The Challenge</div>
+            <div class="cs-body">
+                <p>
+                    The account was posting inconsistently with <strong>minimal visual identity</strong>. Average daily reach hovered below 20 views per day. Content lacked strategic direction — no clear hook framework, no branded visuals, no use of AI or video formats.
+                </p>
+            </div>
+        </div>
+
+        <!-- What I Delivered -->
+        <div class="cs-section">
+            <div class="cs-section-label">What I Delivered</div>
+            <div class="cs-body">
+                <div class="deliverables-grid">
+                    <span class="deliverable-pill">AI Image Generation</span>
+                    <span class="deliverable-pill">Video Content (Reels)</span>
+                    <span class="deliverable-pill">Copywriting</span>
+                    <span class="deliverable-pill">Content Strategy</span>
+                    <span class="deliverable-pill">Hook Frameworks</span>
+                    <span class="deliverable-pill">Visual Identity</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="cs-section">
+            <div class="cs-section-label">Results</div>
+            <div class="cs-body">
+                <div class="before-after">
+                    <div class="ba-cell">
+                        <div class="ba-label">Daily reach — before</div>
+                        <div class="ba-number before">18.76</div>
+                        <div class="ba-desc">avg. views / day</div>
+                    </div>
+                    <div class="ba-cell">
+                        <div class="ba-label">Daily reach — after</div>
+                        <div class="ba-number after">121.08</div>
+                        <div class="ba-desc">avg. views / day</div>
+                    </div>
+                </div>
+
+                <div class="growth-callout">
+                    <div class="growth-number">+545%</div>
+                    <div class="growth-desc">Total daily reach increase — achieved entirely through <strong style="color: #cccccc; font-weight:400;">organic content strategy</strong>, with zero paid advertising budget.</div>
+                </div>
+
+                <p>AI-generated content produced during this collaboration consistently outperformed the account's pre-collaboration posts. The top-performing AI post reached <strong>234 views/day</strong> — over 13× that earlier baseline.</p>
+            </div>
+        </div>
+
+        <!-- Post Performance Breakdown -->
+        <div class="cs-section">
+            <div class="cs-section-label">Post Performance</div>
+            <div class="cs-body">
+                <table class="perf-table">
+                    <thead>
+                        <tr>
+                            <th>Post</th>
+                            <th>Type</th>
+                            <th>Days</th>
+                            <th>Views/day</th>
+                            <th class="bar-cell"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Najveća laž koju sebi govoriš</td>
+                            <td><span class="post-type-badge ai">AI + copy</span></td>
+                            <td>3</td>
+                            <td>234</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Kada ti je glava prepuna a srce prazno</td>
+                            <td><span class="post-type-badge ai">AI + copy</span></td>
+                            <td>4</td>
+                            <td>127</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:54%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Biznis je lakši kada si ti dobro</td>
+                            <td><span class="post-type-badge ai">AI + copy</span></td>
+                            <td>8</td>
+                            <td>87</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:37%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Nemaš vremena za unapređenje</td>
+                            <td><span class="post-type-badge ai">AI + copy</span></td>
+                            <td>6</td>
+                            <td>100</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:43%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Stop</td>
+                            <td><span class="post-type-badge">Video</span></td>
+                            <td>21</td>
+                            <td>42</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:18%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Zamislite da je vaša kozmetika svežija od hleba</td>
+                            <td><span class="post-type-badge">Organic</span></td>
+                            <td>73</td>
+                            <td>18</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:8%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Možda ovo o meni niste znali</td>
+                            <td><span class="post-type-badge">Organic</span></td>
+                            <td>59</td>
+                            <td>22</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:9%"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Želiš da budeš poznata ili uspješna</td>
+                            <td><span class="post-type-badge">Organic</span></td>
+                            <td>60</td>
+                            <td>17</td>
+                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:7%"></div></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Key Insight -->
+        <div class="cs-section">
+            <div class="cs-section-label">Key Insight</div>
+            <div class="cs-body">
+                <div class="insight-box">
+                    <p>Posts created with AI visuals and strategic copywriting averaged 118 views/day — compared to 19 views/day for pre-existing organic content.</p>
+                    <span>The data demonstrates a clear, measurable impact of professional AI-driven content strategy on organic reach.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
