@@ -149,7 +149,7 @@
             font-size: 0.65rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #444;
+            color: #555555;
             padding-top: 4px;
             position: sticky;
             top: 40px;
@@ -165,8 +165,8 @@
         .cs-body p:last-child { margin-bottom: 0; }
 
         .cs-body p strong {
-            color: #ddd;
-            font-weight: 400;
+            color: #dddddd;
+            font-weight: 500;
         }
 
         /* Roles pills */
@@ -267,8 +267,8 @@
 
         .period-stat:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .period-stat-name { color: #666; }
-        .period-stat-value { color: #bbb; }
+        .period-stat-name { color: #777777; }
+        .period-stat-value { color: #dddddd; }
 
         .period-gaps {
             margin-top: 16px;
@@ -292,6 +292,16 @@
         }
 
         .period-gap-item.positive::before { color: #555; }
+
+        /* TOP RESULTS / cs-body section title */
+        .cs-body-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin: 0 0 20px 0;
+        }
 
         /* Top results table */
         .perf-table {
@@ -337,8 +347,7 @@
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 4px;
             padding: 3px 8px;
-            white-space: normal;
-            word-break: break-word;
+            white-space: nowrap;
         }
 
         /* New capabilities */
@@ -358,14 +367,15 @@
         .capability-item:last-child { border-radius: 0 0 8px 8px; }
 
         .capability-title {
-            font-size: 0.82rem;
-            color: #ccc;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #dddddd;
             margin-bottom: 6px;
         }
 
         .capability-desc {
             font-size: 0.78rem;
-            color: #555;
+            color: #666666;
             line-height: 1.7;
         }
 
@@ -388,14 +398,15 @@
         .application-item:nth-child(6) { border-radius: 0 0 8px 0; }
 
         .application-title {
-            font-size: 0.8rem;
-            color: #bbb;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #dddddd;
             margin-bottom: 8px;
         }
 
         .application-desc {
             font-size: 0.78rem;
-            color: #555;
+            color: #666666;
             line-height: 1.7;
         }
 
@@ -447,9 +458,6 @@
             .application-item:nth-child(6) { border-radius: 0; }
             .application-item:first-child { border-radius: 8px 8px 0 0; }
             .application-item:last-child { border-radius: 0 0 8px 8px; }
-            .perf-table { width: 100%; }
-            .perf-table td, .perf-table th { padding: 10px 8px 10px 0; font-size: 0.72rem; }
-            .standout-badge { font-size: 0.65rem; padding: 3px 6px; }
         }
     </style>
 </head>
@@ -633,6 +641,7 @@
         <div class="cs-section">
             <div class="cs-section-label">Top Results</div>
             <div class="cs-body">
+                <h3 class="cs-body-title">Top Results</h3>
                 <table class="perf-table">
                     <thead>
                         <tr>
