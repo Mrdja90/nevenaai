@@ -303,6 +303,16 @@
             margin: 0 0 20px 0;
         }
 
+        /* Subgroup labels within cs-body e.g. "Tools used", "Outputs delivered" */
+        .cs-subgroup-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin: 0 0 14px 0;
+        }
+
         /* Top results table */
         .perf-table {
             width: 100%;
@@ -347,7 +357,8 @@
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 4px;
             padding: 3px 8px;
-            white-space: nowrap;
+            white-space: normal;
+            word-break: break-word;
         }
 
         /* New capabilities */
@@ -537,7 +548,7 @@
         <div class="cs-section">
             <div class="cs-section-label">Tools &amp; Outputs</div>
             <div class="cs-body">
-                <p style="margin-bottom: 16px; font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 0.1em;">Tools used</p>
+                <p class="cs-subgroup-label">Tools used</p>
                 <div class="deliverables-grid" style="margin-bottom: 28px;">
                     <span class="deliverable-pill">Canva</span>
                     <span class="deliverable-pill">CapCut</span>
@@ -547,7 +558,7 @@
                     <span class="deliverable-pill">Zeemo.ai</span>
                     <span class="deliverable-pill">Instagram Insights</span>
                 </div>
-                <p style="margin-bottom: 16px; font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 0.1em;">Outputs delivered</p>
+                <p class="cs-subgroup-label">Outputs delivered</p>
                 <div class="deliverables-grid">
                     <span class="deliverable-pill">Event Posters &amp; Graphics</span>
                     <span class="deliverable-pill">Reels &amp; Video Content</span>
@@ -641,7 +652,6 @@
         <div class="cs-section">
             <div class="cs-section-label">Top Results</div>
             <div class="cs-body">
-                <h3 class="cs-body-title">Top Results</h3>
                 <table class="perf-table">
                     <thead>
                         <tr>
