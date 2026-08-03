@@ -366,6 +366,46 @@
             .tools-grid { grid-template-columns: 1fr; gap: 28px; }
             .credentials-grid { grid-template-columns: 1fr 1fr; }
         }
+        /* ── Accordion ── */
+        .section-label,
+        .cs-section-label {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .section-label::after,
+        .cs-section-label::after {
+            content: '+';
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #555555;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+        .about-section.open > .section-label::after,
+        .cs-section.open > .cs-section-label::after {
+            content: '\2212';
+            color: #aaaaaa;
+        }
+        .section-content,
+        .cs-body {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .about-section.open > .section-content,
+        .cs-section.open > .cs-body {
+            max-height: 4000px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
     </style>
 </head>
 <body>
@@ -386,7 +426,7 @@
         <h2 class="about-eyebrow">Engineer. Artist. AI Creator.</h2>
         <div class="page-header">
             <div class="header-photo">
-                <img src="/static/profile.jpg" alt="Nevena Mucic">
+                <img src="https://nevenaai.com/static/profile.jpg" alt="Nevena Mucic">
             </div>
             <h1>NEVENA<br><em>Mucic</em></h1>
             <div class="header-statement">
@@ -564,6 +604,21 @@
         </div>
 
     </div>
-</body>
+<script>
+    (function(){
+        document.querySelectorAll('.about-section').forEach(function(s,i){
+            var l=s.querySelector('.section-label'),b=s.querySelector('.section-content');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+        document.querySelectorAll('.cs-section').forEach(function(s,i){
+            var l=s.querySelector('.cs-section-label'),b=s.querySelector('.cs-body');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+    })();
+    </script></body>
 </html>
 

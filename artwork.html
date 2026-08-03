@@ -234,12 +234,12 @@
 <body>
     <nav class="top-nav">
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/#case-studies">Case Studies</a>
-            <a href="/artwork.html" class="active">Creative Work</a>
-            <a href="/#testimonials">Testimonials</a>
-            <a href="/#contact">Contact</a>
+            <a href="https://nevenaai.com/">Home</a>
+            <a href="https://nevenaai.com/about.html">About</a>
+            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
+            <a href="https://nevenaai.com/artwork.html" class="active">Creative Work</a>
+            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
+            <a href="https://nevenaai.com/#contact">Contact</a>
         </div>
     </nav>
 
@@ -266,8 +266,8 @@
             <!-- Card 01: scene photo — crop from top so book fills frame -->
             <div class="book-card">
                 <div class="book-scene">
-                    <img src="/static/artwork/covers/drag-1-scene.png" alt="The Poetry of Love and Longing" style="object-position: center top;">
-                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-1-cover.png" alt="Cover">
+                    <img src="https://nevenaai.com/static/artwork/covers/drag-1-scene.png" alt="The Poetry of Love and Longing" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-1-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 01</p>
@@ -281,8 +281,8 @@
             <!-- Card 02: scene photo — crop from top so book fills frame -->
             <div class="book-card">
                 <div class="book-scene">
-                    <img src="/static/artwork/covers/drag-2-scene.png" alt="The Poetry of Love and Longing II" style="object-position: center top;">
-                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-2-cover.png" alt="Cover">
+                    <img src="https://nevenaai.com/static/artwork/covers/drag-2-scene.png" alt="The Poetry of Love and Longing II" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-2-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 02</p>
@@ -296,8 +296,8 @@
             <!-- Card 03: scene photo — portrait orientation -->
             <div class="book-card portrait">
                 <div class="book-scene">
-                    <img src="/static/artwork/covers/drag-3-scene.png" alt="The Poetry of Love and Longing III">
-                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-3-cover.png" alt="Cover">
+                    <img src="https://nevenaai.com/static/artwork/covers/drag-3-scene.png" alt="The Poetry of Love and Longing III">
+                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-3-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 03</p>
@@ -311,8 +311,8 @@
             <!-- Card 04: scene photo — portrait orientation -->
             <div class="book-card portrait">
                 <div class="book-scene">
-                    <img src="/static/artwork/covers/kasi-scene.png" alt="Folk Poems of the Hearth">
-                    <img class="book-cover-thumb" src="/static/artwork/covers/kasi-cover.png" alt="Cover">
+                    <img src="https://nevenaai.com/static/artwork/covers/kasi-scene.png" alt="Folk Poems of the Hearth">
+                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/kasi-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 04</p>
@@ -340,7 +340,7 @@
     </div>
 
     <script>
-        const SITEURL = "";
+        const SITEURL = "https://nevenaai.com";
         const paintings = [
             ["A symphony for her 50x50.jpg", "A Symphony for Her", "50×50 cm", "Acrylic"],
             ["Accept yourself 100x70.jpg", "Accept Yourself", "100×70 cm", "Acrylic"],
@@ -438,6 +438,21 @@
             }
         });
     </script>
-</body>
+<script>
+    (function(){
+        document.querySelectorAll('.about-section').forEach(function(s,i){
+            var l=s.querySelector('.section-label'),b=s.querySelector('.section-content');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+        document.querySelectorAll('.cs-section').forEach(function(s,i){
+            var l=s.querySelector('.cs-section-label'),b=s.querySelector('.cs-body');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+    })();
+    </script></body>
 </html>
 

@@ -476,18 +476,18 @@
 
     <nav class="top-nav">
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/#case-studies">Case Studies</a>
-            <a href="/artwork.html">Creative Work</a>
-            <a href="/#testimonials">Testimonials</a>
-            <a href="/#contact">Contact</a>
+            <a href="https://nevenaai.com/">Home</a>
+            <a href="https://nevenaai.com/about.html">About</a>
+            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
+            <a href="https://nevenaai.com/artwork.html">Creative Work</a>
+            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
+            <a href="https://nevenaai.com/#contact">Contact</a>
         </div>
     </nav>
 
     <div class="cs-page">
 
-        <a href="/#case-studies" class="back-link">All case studies</a>
+        <a href="https://nevenaai.com/#case-studies" class="back-link">All case studies</a>
 
         <!-- Hero -->
         <div class="cs-hero">
@@ -719,7 +719,7 @@
                 <p><strong>Consistent brand identity built over time.</strong> A branded AI-generated video outro (produced in Veo and Midjourney) became a recognizable identity marker across all video content — the first consistent brand element SOKO had.</p>
                 <div class="art-direction-video">
                     <video autoplay loop muted playsinline class="art-direction-video-el">
-                        <source src="/static/soko-falcon-outro.mp4" type="video/mp4">
+                        <source src="https://nevenaai.com/static/soko-falcon-outro.mp4" type="video/mp4">
                     </video>
                     <p class="art-direction-video-caption">The branded outro &mdash; SOKO's golden falcon, now a recognizable closing signature across all video content.</p>
                 </div>
@@ -758,6 +758,21 @@
         </div>
 
     </div>
-</body>
+<script>
+    (function(){
+        document.querySelectorAll('.about-section').forEach(function(s,i){
+            var l=s.querySelector('.section-label'),b=s.querySelector('.section-content');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+        document.querySelectorAll('.cs-section').forEach(function(s,i){
+            var l=s.querySelector('.cs-section-label'),b=s.querySelector('.cs-body');
+            if(!l||!b)return;
+            if(i===0)s.classList.add('open');
+            l.addEventListener('click',function(){s.classList.toggle('open');});
+        });
+    })();
+    </script></body>
 </html>
 
