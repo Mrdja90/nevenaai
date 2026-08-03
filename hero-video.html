@@ -590,16 +590,14 @@
     </div>
 <script>
     (function(){
-        document.querySelectorAll('.about-section').forEach(function(s,i){
+        document.querySelectorAll('.about-section').forEach(function(s){
             var l=s.querySelector('.section-label'),b=s.querySelector('.section-content');
             if(!l||!b)return;
-            if(i===0)s.classList.add('open');
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
-        document.querySelectorAll('.cs-section').forEach(function(s,i){
+        document.querySelectorAll('.cs-section').forEach(function(s){
             var l=s.querySelector('.cs-section-label'),b=s.querySelector('.cs-body');
             if(!l||!b)return;
-            if(i===0)s.classList.add('open');
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
