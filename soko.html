@@ -470,6 +470,47 @@
             .application-item:first-child { border-radius: 8px 8px 0 0; }
             .application-item:last-child { border-radius: 0 0 8px 8px; }
         }
+
+        /* ── Accordion ── */
+        .section-label,
+        .cs-section-label {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .section-label::after,
+        .cs-section-label::after {
+            content: '+';
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #555555;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+        .about-section.open > .section-label::after,
+        .cs-section.open > .cs-section-label::after {
+            content: '\2212';
+            color: #aaaaaa;
+        }
+        .section-content,
+        .cs-body {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .about-section.open > .section-content,
+        .cs-section.open > .cs-body {
+            max-height: 4000px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
     </style>
 </head>
 <body>
