@@ -33,7 +33,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="static/custom.css?v=8">
+    <link rel="stylesheet" href="static/custom.css?v=10">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -95,7 +95,7 @@
             <a href="/">Home</a>
             <a href="about.html">About</a>
             <a href="#case-studies">Case Studies</a>
-            <a href="#video-work">Video Work</a>
+            <a href="#video-work">AI Video Editing</a>
             <a href="artwork.html">Creative Work</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
@@ -219,47 +219,66 @@
         </div>
     </div>
 
-    <section class="showreel-section">
-        <div class="showreel-inner">
-            <div class="showreel-copy">
-                <span class="showreel-label">See it in motion</span>
-                <h2 class="showreel-title">A glimpse into how the work comes together.</h2>
-                <p class="showreel-desc">A short AI-generated promo, concept to final cut &mdash; the same process behind every client project.</p>
-            </div>
-            <div class="showreel-video-frame">
-                <video autoplay loop muted playsinline class="showreel-video-el" poster="static/showreel-poster.jpg">
-                    <source src="static/nevena-promo-reel.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-
     <section class="video-work-section" id="video-work">
         <div class="video-work-header">
-            <span class="video-work-label">AI Video Content</span>
-            <p class="video-work-desc">Full-length AI-assisted video edits &mdash; with sound. Click to play.</p>
+            <span class="video-work-label">AI Video Editing</span>
+            <p class="video-work-desc">Concept to final cut &mdash; AI-assisted video edits, with sound. Click to play.</p>
         </div>
-        <div class="video-work-grid">
+        <div class="ai-video-layout">
 
-            <!-- Video 1: The Show Must Go On -->
-            <div class="video-card">
-                <div class="video-card-frame" data-video-id="CoiUNkytv5I" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000;">
-                    <img src="https://img.youtube.com/vi/CoiUNkytv5I/maxresdefault.jpg" alt="The Show Must Go On — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
-                    <button class="video-play-btn" aria-label="Play video: The Show Must Go On" onclick="playVideoCard(this)">
+            <!-- Featured: Portfolio Showreel (self-hosted, now with sound) -->
+            <div class="video-card reel-card">
+                <div class="video-card-frame reel-frame" data-video-src="static/za-portfolio-compressed.mp4">
+                    <img src="static/showreel-poster.jpg" alt="Portfolio Showreel thumbnail" class="video-card-thumb" loading="lazy">
+                    <button class="video-play-btn" aria-label="Play video: Portfolio Showreel" onclick="playReelVideo(this)">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
                     </button>
                 </div>
                 <div class="video-card-caption">
-                    <span class="video-card-title">The Show Must Go On</span>
+                    <span class="video-card-title">Got your attention?</span>
                 </div>
             </div>
 
-            <!-- Add more <div class="video-card"> blocks here as more videos are ready -->
+            <!-- Additional videos — this grid expands automatically as more cards are added -->
+            <div class="video-grid-secondary">
 
+                <!-- Video: The Show Must Go On -->
+                <div class="video-card">
+                    <div class="video-card-frame" data-video-id="CoiUNkytv5I">
+                        <img src="https://img.youtube.com/vi/CoiUNkytv5I/maxresdefault.jpg" alt="The Show Must Go On — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
+                        <button class="video-play-btn" aria-label="Play video: The Show Must Go On" onclick="playVideoCard(this)">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="video-card-caption">
+                        <span class="video-card-title">The Show Must Go On</span>
+                    </div>
+                </div>
+
+                <!-- Add more <div class="video-card"> blocks here as more videos are ready -->
+
+            </div>
         </div>
     </section>
 
     <script>
+        // Self-hosted video (reel) — click swaps the poster for a real <video> with controls + sound
+        function playReelVideo(btn) {
+            var frame = btn.closest('.video-card-frame');
+            var src = frame.getAttribute('data-video-src');
+            var title = btn.getAttribute('aria-label').replace('Play video: ', '');
+            var video = document.createElement('video');
+            video.src = src;
+            video.controls = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.setAttribute('aria-label', title);
+            video.className = 'video-card-thumb';
+            frame.innerHTML = '';
+            frame.appendChild(video);
+        }
+
+        // YouTube-hosted videos — click swaps the thumbnail for an embedded player
         function playVideoCard(btn) {
             var frame = btn.closest('.video-card-frame');
             var videoId = frame.getAttribute('data-video-id');
