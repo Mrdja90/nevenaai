@@ -33,7 +33,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="static/custom.css?v=10">
+    <link rel="stylesheet" href="static/custom.css?v=12">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -221,16 +221,16 @@
 
     <section class="video-work-section" id="video-work">
         <div class="video-work-header">
-            <span class="video-work-label">AI Video Editing</span>
-            <p class="video-work-desc">Concept to final cut &mdash; AI-assisted video edits, with sound. Click to play.</p>
+            <span class="video-work-label">AI Video Production &amp; Editing</span>
+            <p class="video-work-desc">From concept to final cut &mdash; video generated, edited, narrated, and scored entirely with AI, including English subtitles. Click to play with sound.</p>
         </div>
-        <div class="ai-video-layout">
+        <div class="video-work-grid">
 
-            <!-- Featured: Portfolio Showreel (self-hosted, now with sound) -->
-            <div class="video-card reel-card">
-                <div class="video-card-frame reel-frame" data-video-src="static/za-portfolio-compressed.mp4">
+            <!-- Video: Portfolio Showreel (self-hosted, with sound) -->
+            <div class="video-card">
+                <div class="video-card-frame" data-video-src="static/za-portfolio-cropped.mp4">
                     <img src="static/showreel-poster.jpg" alt="Portfolio Showreel thumbnail" class="video-card-thumb" loading="lazy">
-                    <button class="video-play-btn" aria-label="Play video: Portfolio Showreel" onclick="playReelVideo(this)">
+                    <button class="video-play-btn" aria-label="Play video: Portfolio Showreel" onclick="playLocalVideo(this)">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
                     </button>
                 </div>
@@ -239,31 +239,40 @@
                 </div>
             </div>
 
-            <!-- Additional videos — this grid expands automatically as more cards are added -->
-            <div class="video-grid-secondary">
-
-                <!-- Video: The Show Must Go On -->
-                <div class="video-card">
-                    <div class="video-card-frame" data-video-id="CoiUNkytv5I">
-                        <img src="https://img.youtube.com/vi/CoiUNkytv5I/maxresdefault.jpg" alt="The Show Must Go On — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
-                        <button class="video-play-btn" aria-label="Play video: The Show Must Go On" onclick="playVideoCard(this)">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
-                        </button>
-                    </div>
-                    <div class="video-card-caption">
-                        <span class="video-card-title">The Show Must Go On</span>
-                    </div>
+            <!-- Video: The Show Must Go On (YouTube-hosted) -->
+            <div class="video-card">
+                <div class="video-card-frame" data-video-id="CoiUNkytv5I">
+                    <img src="https://img.youtube.com/vi/CoiUNkytv5I/maxresdefault.jpg" alt="The Show Must Go On — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
+                    <button class="video-play-btn" aria-label="Play video: The Show Must Go On" onclick="playVideoCard(this)">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
                 </div>
-
-                <!-- Add more <div class="video-card"> blocks here as more videos are ready -->
-
+                <div class="video-card-caption">
+                    <span class="video-card-title">The Show Must Go On</span>
+                </div>
             </div>
+
+            <!-- Video: new AI edit (self-hosted, with sound) -->
+            <div class="video-card">
+                <div class="video-card-frame" data-video-src="static/ai-video-2.mp4">
+                    <img src="static/ai-video-2-poster.jpg" alt="Cinematic Close-Up — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
+                    <button class="video-play-btn" aria-label="Play video: Cinematic Close-Up" onclick="playLocalVideo(this)">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="video-card-caption">
+                    <span class="video-card-title">Cinematic Close-Up</span>
+                </div>
+            </div>
+
+            <!-- Add more <div class="video-card"> blocks here as more videos are ready -->
+
         </div>
     </section>
 
     <script>
-        // Self-hosted video (reel) — click swaps the poster for a real <video> with controls + sound
-        function playReelVideo(btn) {
+        // Self-hosted videos — click swaps the poster for a real <video> with controls + sound
+        function playLocalVideo(btn) {
             var frame = btn.closest('.video-card-frame');
             var src = frame.getAttribute('data-video-src');
             var title = btn.getAttribute('aria-label').replace('Play video: ', '');
