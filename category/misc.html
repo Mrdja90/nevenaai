@@ -33,7 +33,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="static/custom.css?v=12">
+    <link rel="stylesheet" href="static/custom.css?v=13">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -226,8 +226,8 @@
         </div>
         <div class="video-work-grid">
 
-            <!-- Video: Portfolio Showreel (self-hosted, with sound) -->
-            <div class="video-card">
+            <!-- Video: Portfolio Showreel (self-hosted, with sound) — aspect ratio 864:1054 -->
+            <div class="video-card" style="--vratio: 0.82;">
                 <div class="video-card-frame" data-video-src="static/za-portfolio-cropped.mp4">
                     <img src="static/showreel-poster.jpg" alt="Portfolio Showreel thumbnail" class="video-card-thumb" loading="lazy">
                     <button class="video-play-btn" aria-label="Play video: Portfolio Showreel" onclick="playLocalVideo(this)">
@@ -235,12 +235,12 @@
                     </button>
                 </div>
                 <div class="video-card-caption">
-                    <span class="video-card-title">Got your attention?</span>
+                    <span class="video-card-title">Got Your Attention?</span>
                 </div>
             </div>
 
-            <!-- Video: The Show Must Go On (YouTube-hosted) -->
-            <div class="video-card">
+            <!-- Video: The Show Must Go On (YouTube-hosted) — aspect ratio 16:9 -->
+            <div class="video-card" style="--vratio: 1.78;">
                 <div class="video-card-frame" data-video-id="CoiUNkytv5I">
                     <img src="https://img.youtube.com/vi/CoiUNkytv5I/maxresdefault.jpg" alt="The Show Must Go On — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
                     <button class="video-play-btn" aria-label="Play video: The Show Must Go On" onclick="playVideoCard(this)">
@@ -252,8 +252,8 @@
                 </div>
             </div>
 
-            <!-- Video: new AI edit (self-hosted, with sound) -->
-            <div class="video-card">
+            <!-- Video: new AI edit (self-hosted, with sound) — approximate aspect ratio, adjust if needed -->
+            <div class="video-card" style="--vratio: 0.8;">
                 <div class="video-card-frame" data-video-src="static/ai-video-2.mp4">
                     <img src="static/ai-video-2-poster.jpg" alt="Cinematic Close-Up — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
                     <button class="video-play-btn" aria-label="Play video: Cinematic Close-Up" onclick="playLocalVideo(this)">
@@ -274,6 +274,7 @@
         // Self-hosted videos — click swaps the poster for a real <video> with controls + sound
         function playLocalVideo(btn) {
             var frame = btn.closest('.video-card-frame');
+            frame.style.height = frame.offsetHeight + 'px';
             var src = frame.getAttribute('data-video-src');
             var title = btn.getAttribute('aria-label').replace('Play video: ', '');
             var video = document.createElement('video');
@@ -282,7 +283,10 @@
             video.autoplay = true;
             video.playsInline = true;
             video.setAttribute('aria-label', title);
-            video.className = 'video-card-thumb';
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.display = 'block';
+            video.style.objectFit = 'contain';
             frame.innerHTML = '';
             frame.appendChild(video);
         }
@@ -290,6 +294,7 @@
         // YouTube-hosted videos — click swaps the thumbnail for an embedded player
         function playVideoCard(btn) {
             var frame = btn.closest('.video-card-frame');
+            frame.style.height = frame.offsetHeight + 'px';
             var videoId = frame.getAttribute('data-video-id');
             var title = btn.getAttribute('aria-label').replace('Play video: ', '');
             var iframe = document.createElement('iframe');

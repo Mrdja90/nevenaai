@@ -48,9 +48,18 @@ html { scroll-behavior: smooth; }
 .marquee-track { display: flex; white-space: nowrap; will-change: transform; }
 .marquee-item { display: inline-block; padding: 0 40px; color: #777777; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; flex-shrink: 0; }
 
-/* ── AI Video Section (each card keeps its video's real aspect ratio, wraps to fill the row) ── */
+/* ── AI Video Section (each card keeps its video's real aspect ratio) ── */
+/* Mobile/tablet: wraps into rows, each card sized on its own */
 .video-work-grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px; }
 .video-work-grid .video-card { flex: 1 1 300px; max-width: 380px; }
+
+/* Desktop: one row, no wrap — each card grows in proportion to its own aspect ratio
+   (--vratio, set inline per card), which mathematically forces all three to the
+   same height while the row fills exactly 100% of the available width. No cropping. */
+@media (min-width: 900px) {
+    .video-work-grid { flex-wrap: nowrap; }
+    .video-work-grid .video-card { flex: var(--vratio, 1) 1 0%; max-width: none; }
+}
 
 /* ── Case Studies ── */
 .case-studies-section { padding: 80px 5%; scroll-margin-top: 40px; }
