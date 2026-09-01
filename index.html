@@ -56,39 +56,29 @@
         .services-label { font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #ffffff; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 
-        /* Artwork & Book Covers teaser — see .creative-teaser-section below */
-    
-        /* Book covers teaser */
-        .creative-teaser-section { padding: 80px 5%; }
-        .creative-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-        .creative-block-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
-        .creative-block-label { font-size: 1.15rem; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 10px; }
-        .creative-block-title { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #999999; line-height: 1.5; }
-        .creative-block-title em { font-weight: 400; font-style: italic; }
-        .creative-block-link { font-size: 0.78rem; color: #777777; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 30px; white-space: nowrap; transition: all 0.3s ease; flex-shrink: 0; margin-left: 20px; }
+        /* Traditional Art teaser — one full row, proportional to the Fashion Editorial grid above it */
+        .traditional-art-section { padding: 60px 5% 80px; }
+        .traditional-art-label { font-size: 1.1rem; letter-spacing: 0.02em; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 24px; }
+        .traditional-art-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .traditional-art-item { display: block; aspect-ratio: 3/4; border-radius: 10px; overflow: hidden; background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1); }
+        .traditional-art-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .traditional-art-item:hover { border-color: rgba(255,255,255,0.45); transform: scale(1.02) translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .traditional-art-subtitles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 20px; }
+        .traditional-art-subtitle { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+        .traditional-art-subtitle span { font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; color: #cccccc; font-weight: 700; }
+        .creative-block-link { font-size: 0.78rem; color: #777777; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 30px; white-space: nowrap; transition: all 0.3s ease; width: fit-content; flex-shrink: 0; }
         .creative-block-link:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
 
-        /* Painting grid (left block) */
-        .painting-mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .painting-mini-item { display: block; overflow: hidden; border-radius: 6px; aspect-ratio: 3/4; background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); transform: scale(1) translateY(0); transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1); }
-        .painting-mini-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .painting-mini-item:hover { border-color: rgba(255,255,255,0.45); transform: scale(1.03) translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
-
-        /* Book covers grid (right block) */
-        .book-mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .book-mini-item { display: block; overflow: hidden; border-radius: 6px; aspect-ratio: 3/4; background: #111; border: 1px solid rgba(255,255,255,0.08); transform: scale(1) translateY(0); transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1), transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1); position: relative; }
-        .book-mini-item img { position: absolute; top: -1px; left: -1px; width: calc(100% + 2px); height: calc(100% + 2px); object-fit: cover; object-position: center top; display: block; }
-        .book-mini-item.adjust-crop img { object-position: center 25%; }
-        .book-mini-item:hover { border-color: rgba(255,255,255,0.45); transform: scale(1.03) translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
-
-        @media (max-width: 900px) {
-            .creative-blocks { grid-template-columns: 1fr; gap: 60px; }
+        @media (max-width: 700px) {
+            .traditional-art-grid { grid-template-columns: repeat(2, 1fr); }
+            .traditional-art-subtitles { grid-template-columns: repeat(2, 1fr); }
+            .traditional-art-subtitle { grid-column: span 2; }
         }
 
         @media (max-width: 600px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .services-section { padding: 48px 5%; }
-            .creative-teaser-section { padding: 48px 5%; }
+            .traditional-art-section { padding: 48px 5%; }
             .pill { padding: 10px 12px; font-size: 0.8rem; height: 54px; }
         }
     </style>
@@ -105,7 +95,8 @@
             <a href="about.html">About</a>
             <a href="#case-studies">Case Studies</a>
             <a href="#video-work">AI Video Editing</a>
-            <a href="artwork.html">Creative Work</a>
+            <a href="#fashion-editorial">AI Fashion Editorial</a>
+            <a href="artwork.html">Traditional Art</a>
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </div>
@@ -274,6 +265,19 @@
                 </div>
             </div>
 
+            <!-- Video: Visine (YouTube-hosted, custom thumbnail set on YouTube) — verify --vratio against real resolution -->
+            <div class="video-card" style="--vratio: 1.78;">
+                <div class="video-card-frame" data-video-id="u78ylMLs0EM">
+                    <img src="https://img.youtube.com/vi/u78ylMLs0EM/maxresdefault.jpg" alt="Visine — AI video edit thumbnail" class="video-card-thumb" loading="lazy">
+                    <button class="video-play-btn" aria-label="Play video: Visine" onclick="playVideoCard(this)">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="video-card-caption">
+                    <span class="video-card-title">Visine</span>
+                </div>
+            </div>
+
             <!-- Add more <div class="video-card"> blocks here as more videos are ready -->
 
         </div>
@@ -322,59 +326,129 @@
         }
     </script>
 
-    <section class="creative-teaser-section">
-        <div class="creative-blocks">
+    <section class="fashion-editorial-section" id="fashion-editorial">
+        <div class="fashion-editorial-header">
+            <p class="fashion-editorial-label">SEDIMENT &mdash; An Editorial Study</p>
+            <p class="fashion-editorial-desc">SEDIMENT follows water through three states &mdash; held, in motion, and left behind &mdash; as a metaphor for how experience settles into who we become. Stillness in the pool gives way to movement across ruins and open air, before finally coming to rest in the mineral terraces where the water leaves its mark. Ten frames, one continuous idea: nothing simply happens and disappears &mdash; it accumulates.</p>
+        </div>
+        <div class="fashion-editorial-grid" id="fashionEditorialGrid"></div>
+    </section>
 
-            <!-- Block 1: Artwork / Paintings -->
-            <div class="creative-block">
-                <div class="creative-block-header">
-                    <div>
-                        <p class="creative-block-label">Original Paintings</p>
-                        <h2 class="creative-block-title">The work <em>behind the work.</em></h2>
-                    </div>
-                    <a href="/artwork.html" class="creative-block-link">View all &rarr;</a>
-                </div>
-                <div class="painting-mini-grid">
-                    <a href="/artwork.html" class="painting-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/paintings/teaser/A symphony for her 50x50.jpg" alt="A Symphony for Her" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html" class="painting-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/paintings/teaser/Accept yourself 100x70.jpg" alt="Accept Yourself" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html" class="painting-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/paintings/teaser/Rebirth 100x70.jpg" alt="Rebirth" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html" class="painting-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/paintings/teaser/Swan 50x40.jpg" alt="Swan" loading="lazy" decoding="async">
-                    </a>
-                </div>
+    <div class="lightbox" id="feLightbox" onclick="closeFeLightboxOnBg(event)">
+        <button class="lightbox-close" onclick="closeFeLightbox()">&#215;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateFeLightbox(-1)">&#8592;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateFeLightbox(1)">&#8594;</button>
+        <div class="lightbox-inner">
+            <img id="feLightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+                <div class="lightbox-title" id="feLightboxTitle"></div>
             </div>
+        </div>
+    </div>
 
-            <!-- Block 2: Book Covers -->
-            <div class="creative-block">
-                <div class="creative-block-header">
-                    <div>
-                        <p class="creative-block-label">Book Cover Illustration</p>
-                        <h2 class="creative-block-title">Between the <em>poem and the page.</em></h2>
-                    </div>
-                    <a href="/artwork.html#book-covers" class="creative-block-link">View all &rarr;</a>
-                </div>
-                <div class="book-mini-grid">
-                    <a href="/artwork.html#book-covers" class="book-mini-item adjust-crop">
-                        <img src="https://nevenaai.com/static/artwork/covers/drag-1-cover.png" alt="The Poetry of Love and Longing" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html#book-covers" class="book-mini-item adjust-crop">
-                        <img src="https://nevenaai.com/static/artwork/covers/drag-2-cover.png" alt="The Poetry of Love and Longing II" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html#book-covers" class="book-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/covers/drag-3-cover.png" alt="The Poetry of Love and Longing III" loading="lazy" decoding="async">
-                    </a>
-                    <a href="/artwork.html#book-covers" class="book-mini-item">
-                        <img src="https://nevenaai.com/static/artwork/covers/kasi-cover.png" alt="Folk Poems of the Hearth" loading="lazy" decoding="async">
-                    </a>
-                </div>
+    <script>
+        (function() {
+            var shots = [
+                ["FE_Image1.jpeg", "Poolside"],
+                ["FE_Image2.jpeg", "Stairwell"],
+                ["FE_Image3.jpeg", "Stone Archway"],
+                ["FE_Image4.jpeg", "Terracotta Wrap"],
+                ["FE_Image5.jpeg", "Ruins in Rust"],
+                ["FE_Image6.jpeg", "Cliffside Wind"],
+                ["FE_Image7.jpeg", "Water's Edge"],
+                ["FE_Image8.jpeg", "Golden Hour"],
+                ["FE_Image9.jpeg", "Salt Terraces I"],
+                ["FE_Image10.jpeg", "Salt Terraces II"]
+            ];
+            var basePath = "https://nevenaai.com/static/artwork/fashion/";
+            var grid = document.getElementById('fashionEditorialGrid');
+            var lightbox = document.getElementById('feLightbox');
+            var lightboxOpen = false;
+            var currentIndex = 0;
+            var total = shots.length;
+
+            shots.forEach(function(shot, i) {
+                var filename = shot[0];
+                var title = shot[1];
+                var item = document.createElement('div');
+                item.className = 'fashion-editorial-item';
+                var img = document.createElement('img');
+                img.src = basePath + encodeURIComponent(filename);
+                img.alt = title;
+                img.loading = i < 4 ? 'eager' : 'lazy';
+                img.decoding = 'async';
+                item.appendChild(img);
+                item.addEventListener('click', function() { openFeLightbox(i); });
+                grid.appendChild(item);
+            });
+
+            window.openFeLightbox = function(index) {
+                currentIndex = index;
+                showFeLightboxItem(index);
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                lightboxOpen = true;
+            };
+
+            function showFeLightboxItem(index) {
+                var shot = shots[index];
+                document.getElementById('feLightboxImg').src = basePath + encodeURIComponent(shot[0]);
+                document.getElementById('feLightboxImg').alt = shot[1];
+                document.getElementById('feLightboxTitle').textContent = shot[1];
+            }
+
+            window.navigateFeLightbox = function(dir) {
+                currentIndex = (currentIndex + dir + total) % total;
+                showFeLightboxItem(currentIndex);
+            };
+
+            window.closeFeLightbox = function() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+                lightboxOpen = false;
+            };
+
+            window.closeFeLightboxOnBg = function(e) {
+                if (e.target === lightbox) closeFeLightbox();
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (lightboxOpen) {
+                    if (e.key === 'Escape') closeFeLightbox();
+                    if (e.key === 'ArrowLeft') navigateFeLightbox(-1);
+                    if (e.key === 'ArrowRight') navigateFeLightbox(1);
+                }
+            });
+        })();
+    </script>
+
+    <section class="traditional-art-section">
+        <p class="traditional-art-label">Traditional Art</p>
+
+        <div class="traditional-art-subtitles">
+            <div class="traditional-art-subtitle">
+                <span>Original Paintings</span>
+                <a href="/artwork.html" class="creative-block-link">View all &rarr;</a>
             </div>
+            <div class="traditional-art-subtitle">
+                <span>Book Cover Illustration</span>
+                <a href="/artwork.html#book-covers" class="creative-block-link">View all &rarr;</a>
+            </div>
+        </div>
 
+        <div class="traditional-art-grid">
+            <a href="/artwork.html" class="traditional-art-item">
+                <img src="https://nevenaai.com/static/artwork/paintings/teaser/A symphony for her 50x50.jpg" alt="A Symphony for Her" loading="lazy" decoding="async">
+            </a>
+            <a href="/artwork.html" class="traditional-art-item">
+                <img src="https://nevenaai.com/static/artwork/paintings/teaser/Rebirth 100x70.jpg" alt="Rebirth" loading="lazy" decoding="async">
+            </a>
+            <a href="/artwork.html#book-covers" class="traditional-art-item">
+                <img src="https://nevenaai.com/static/artwork/covers/drag-1-cover.png" alt="The Poetry of Love and Longing" loading="lazy" decoding="async">
+            </a>
+            <a href="/artwork.html#book-covers" class="traditional-art-item">
+                <img src="https://nevenaai.com/static/artwork/covers/kasi-cover.png" alt="Folk Poems of the Hearth" loading="lazy" decoding="async">
+            </a>
         </div>
     </section>
 
