@@ -14,34 +14,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetzwerkPRO Case Study — AI Visual Content Creator &middot; Basel</title>
     <meta name="description" content="How Nevena Mucic, an AI Visual Content Creator based in Basel, built an Instagram content strategy for NetzwerkPRO with 0 CHF in ad spend, driving a 545% increase in daily reach through AI-assisted visuals.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        h1, h2, h3 { font-family: var(--font-heading); }
 
         body, html {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: var(--font-body);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
         /* Nav */
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: #ffffff; }
+                        .nav-links a:hover { color: var(--accent-burgundy); }
 
         /* Page wrapper */
         .cs-page {
@@ -58,18 +47,18 @@
             font-size: 0.75rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             text-decoration: none;
             margin-bottom: 48px;
             transition: color 0.3s ease;
         }
-        .back-link:hover { color: #aaa; }
+        .back-link:hover { color: var(--text-secondary); }
         .back-link::before { content: '←'; }
 
         /* Hero */
         .cs-hero {
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
             margin-bottom: 60px;
         }
 
@@ -77,12 +66,12 @@
             font-size: 0.72rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
         .cs-title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: clamp(2.8rem, 6vw, 4.5rem);
             line-height: 1.05;
@@ -96,7 +85,7 @@
 
         .cs-subtitle {
             font-size: 0.85rem;
-            color: #555;
+            color: var(--text-secondary);
             letter-spacing: 0.05em;
             margin-bottom: 40px;
         }
@@ -110,8 +99,8 @@
 
         .cs-stat {
             flex: 1;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 24px 20px;
         }
 
@@ -119,17 +108,17 @@
         .cs-stat:last-child { border-radius: 0 8px 8px 0; }
 
         .cs-stat-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 2.2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-primary);
             line-height: 1;
             margin-bottom: 6px;
         }
 
         .cs-stat-label {
             font-size: 0.7rem;
-            color: #555;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             line-height: 1.4;
@@ -141,7 +130,7 @@
             grid-template-columns: 180px 1fr;
             gap: 60px;
             padding: 52px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--card-border);
             align-items: start;
         }
 
@@ -151,23 +140,23 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             padding-top: 4px;
             position: sticky;
-            top: 40px;
+            top: 100px;
         }
 
         .cs-body p {
             font-size: 0.95rem;
             line-height: 1.95;
-            color: #888;
+            color: var(--text-secondary);
             margin-bottom: 18px;
         }
 
         .cs-body p:last-child { margin-bottom: 0; }
 
         .cs-body p strong {
-            color: #dddddd;
+            color: var(--text-primary);
             font-weight: 500;
         }
 
@@ -179,11 +168,11 @@
         }
 
         .deliverable-pill {
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid var(--card-border);
             padding: 10px 18px;
             border-radius: 30px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: var(--text-secondary);
         }
 
         /* Before/after comparison */
@@ -196,8 +185,8 @@
 
         .ba-cell {
             padding: 28px 24px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
         }
 
         .ba-cell:first-child { border-radius: 8px 0 0 8px; }
@@ -207,29 +196,29 @@
             font-size: 0.72rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 12px;
         }
 
         .ba-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 2.8rem;
             font-weight: 700;
             line-height: 1;
             margin-bottom: 6px;
         }
 
-        .ba-number.after { color: #fff; }
-        .ba-number.before { color: #333; }
+        .ba-number.after { color: var(--accent-burgundy); }
+        .ba-number.before { color: var(--text-secondary); }
 
         .ba-desc {
             font-size: 0.75rem;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .growth-callout {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
             padding: 24px 28px;
             display: flex;
@@ -239,17 +228,17 @@
         }
 
         .growth-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 3rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--accent-burgundy);
             white-space: nowrap;
             line-height: 1;
         }
 
         .growth-desc {
             font-size: 0.85rem;
-            color: #666;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
 
@@ -261,14 +250,14 @@
         }
 
         .perf-table thead tr {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .perf-table th {
             font-size: 0.7rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #777777;
+            color: var(--text-secondary);
             padding: 0 16px 14px 0;
             text-align: left;
             font-weight: 400;
@@ -276,67 +265,67 @@
 
         .perf-table td {
             padding: 14px 16px 14px 0;
-            color: #888;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--card-border);
             vertical-align: middle;
         }
 
         .perf-table tr:last-child td { border-bottom: none; }
 
-        .perf-table td:first-child { color: #ccc; }
+        .perf-table td:first-child { color: var(--text-secondary); }
 
         .post-type-badge {
             display: inline-block;
             font-size: 0.65rem;
             padding: 3px 8px;
             border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #666;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
             white-space: nowrap;
         }
 
-        .post-type-badge.ai { border-color: rgba(255,255,255,0.2); color: #aaa; }
+        .post-type-badge.ai { border-color: var(--accent-burgundy); color: var(--accent-burgundy); }
 
         .bar-cell { width: 120px; }
 
         .mini-bar-track {
             height: 2px;
-            background: rgba(255,255,255,0.06);
+            background: var(--card-border);
             border-radius: 1px;
             margin-top: 6px;
         }
 
         .mini-bar-fill {
             height: 2px;
-            background: rgba(255,255,255,0.3);
+            background: var(--accent-burgundy);
             border-radius: 1px;
         }
 
         /* Key insight */
         .insight-box {
-            border-left: 1px solid rgba(255,255,255,0.15);
+            border-left: 1px solid var(--card-border);
             padding-left: 28px;
             margin-top: 8px;
         }
 
         .insight-box p {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-style: italic;
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             line-height: 1.6;
-            color: #ccc;
+            color: var(--text-secondary);
             margin-bottom: 12px !important;
         }
 
         .insight-box span {
             font-size: 0.75rem;
-            color: #666666;
+            color: var(--text-secondary);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .top-nav { padding: 16px 20px; }
-            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            
+            
             .cs-page { padding: 40px 5% 80px; }
             .cs-stat-row { flex-direction: column; gap: 2px; }
             .cs-stat:first-child { border-radius: 8px 8px 0 0; }
@@ -366,7 +355,7 @@
             content: '+';
             font-size: 1.1rem;
             font-weight: 300;
-            color: #555555;
+            color: var(--text-secondary);
             line-height: 1;
             flex-shrink: 0;
             transition: color 0.3s ease;
@@ -374,7 +363,7 @@
         .about-section.open > .section-label::after,
         .cs-section.open > .cs-section-label::after {
             content: '\2212';
-            color: #aaaaaa;
+            color: var(--text-secondary);
         }
         .section-content,
         .cs-body {
@@ -392,28 +381,26 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
 </head>
 <body>
 
     <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
         <div class="nav-links">
-            <a href="https://nevenaai.com/">Home</a>
-            <a href="https://nevenaai.com/about.html">About</a>
-            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
-            <a href="https://nevenaai.com/#fashion-editorial">AI Fashion Editorial</a>
-            <a href="https://nevenaai.com/artwork.html">Traditional Art</a>
-            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
-            <a href="https://nevenaai.com/#contact">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
         </div>
     </nav>
 
     <div class="cs-page">
 
-        <a href="https://nevenaai.com/#case-studies" class="back-link">All case studies</a>
-
         <!-- Hero -->
         <div class="cs-hero">
-            <p class="cs-eyebrow">Case Study · 02</p>
             <h1 class="cs-title">Netzwerk<em>PRO</em></h1>
             <p class="cs-subtitle">Business development coaching · Basel, Switzerland · Instagram content strategy</p>
 
@@ -438,7 +425,7 @@
         </div>
 
         <!-- Overview -->
-        <div class="cs-section">
+        <div class="cs-section open">
             <div class="cs-section-label">Overview</div>
             <div class="cs-body">
                 <p>
@@ -479,25 +466,12 @@
         <div class="cs-section">
             <div class="cs-section-label">Results</div>
             <div class="cs-body">
-                <div class="before-after">
-                    <div class="ba-cell">
-                        <div class="ba-label">Daily reach — before</div>
-                        <div class="ba-number before">18.76</div>
-                        <div class="ba-desc">avg. views / day</div>
-                    </div>
-                    <div class="ba-cell">
-                        <div class="ba-label">Daily reach — after</div>
-                        <div class="ba-number after">121.08</div>
-                        <div class="ba-desc">avg. views / day</div>
-                    </div>
-                </div>
-
                 <div class="growth-callout">
-                    <div class="growth-number">+545%</div>
-                    <div class="growth-desc">Total daily reach increase — achieved entirely through <strong style="color:#ccc; font-weight:400;">organic content strategy</strong>, with zero paid advertising budget.</div>
+                    <div class="growth-number">6.5×</div>
+                    <div class="growth-desc">Increase in average views per day during the collaboration.</div>
                 </div>
 
-                <p>AI-generated content produced during this collaboration consistently outperformed the account's pre-collaboration posts. The top-performing AI post reached <strong>234 views/day</strong> — over 13× that earlier baseline.</p>
+                <p>AI-generated content produced during this collaboration consistently outperformed the account's pre-collaboration posts. The top-performing AI post reached <strong>234 views/day</strong>.</p>
             </div>
         </div>
 
@@ -505,75 +479,86 @@
         <div class="cs-section">
             <div class="cs-section-label">Post Performance</div>
             <div class="cs-body">
-                <table class="perf-table">
-                    <thead>
-                        <tr>
-                            <th>Post</th>
-                            <th>Type</th>
-                            <th>Days</th>
-                            <th>Views/day</th>
-                            <th class="bar-cell"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Najveća laž koju sebi govoriš</td>
-                            <td><span class="post-type-badge ai">AI + copy</span></td>
-                            <td>3</td>
-                            <td>234</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Kada ti je glava prepuna a srce prazno</td>
-                            <td><span class="post-type-badge ai">AI + copy</span></td>
-                            <td>4</td>
-                            <td>127</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:54%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Biznis je lakši kada si ti dobro</td>
-                            <td><span class="post-type-badge ai">AI + copy</span></td>
-                            <td>8</td>
-                            <td>87</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:37%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Nemaš vremena za unapređenje</td>
-                            <td><span class="post-type-badge ai">AI + copy</span></td>
-                            <td>6</td>
-                            <td>100</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:43%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Stop</td>
-                            <td><span class="post-type-badge">Video</span></td>
-                            <td>21</td>
-                            <td>42</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:18%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Zamislite da je vaša kozmetika svežija od hleba</td>
-                            <td><span class="post-type-badge">Organic</span></td>
-                            <td>73</td>
-                            <td>18</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:8%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Možda ovo o meni niste znali</td>
-                            <td><span class="post-type-badge">Organic</span></td>
-                            <td>59</td>
-                            <td>22</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:9%"></div></div></td>
-                        </tr>
-                        <tr>
-                            <td>Želiš da budeš poznata ili uspješna</td>
-                            <td><span class="post-type-badge">Organic</span></td>
-                            <td>60</td>
-                            <td>17</td>
-                            <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:7%"></div></div></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="perf-table-wrap">
+                    <table class="perf-table">
+                        <thead>
+                            <tr>
+                                <th>Post</th>
+                                <th>Type</th>
+                                <th>Period</th>
+                                <th>Days</th>
+                                <th>Views/day</th>
+                                <th class="bar-cell"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="after-nevena">
+                                <td>Najveća laž koju sebi govoriš</td>
+                                <td><span class="post-type-badge ai">AI + copy</span></td>
+                                <td><span class="post-period-badge">After</span></td>
+                                <td>3</td>
+                                <td>234</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:100%"></div></div></td>
+                            </tr>
+                            <tr class="after-nevena">
+                                <td>Kada ti je glava prepuna a srce prazno</td>
+                                <td><span class="post-type-badge ai">AI + copy</span></td>
+                                <td><span class="post-period-badge">After</span></td>
+                                <td>4</td>
+                                <td>127</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:54%"></div></div></td>
+                            </tr>
+                            <tr class="after-nevena">
+                                <td>Biznis je lakši kada si ti dobro</td>
+                                <td><span class="post-type-badge ai">AI + copy</span></td>
+                                <td><span class="post-period-badge">After</span></td>
+                                <td>8</td>
+                                <td>87</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:37%"></div></div></td>
+                            </tr>
+                            <tr class="after-nevena">
+                                <td>Nemaš vremena za unapređenje</td>
+                                <td><span class="post-type-badge ai">AI + copy</span></td>
+                                <td><span class="post-period-badge">After</span></td>
+                                <td>6</td>
+                                <td>100</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:43%"></div></div></td>
+                            </tr>
+                            <tr class="after-nevena">
+                                <td>Stop</td>
+                                <td><span class="post-type-badge ai">Video</span></td>
+                                <td><span class="post-period-badge">After</span></td>
+                                <td>21</td>
+                                <td>42</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:18%"></div></div></td>
+                            </tr>
+                            <tr>
+                                <td>Zamislite da je vaša kozmetika svežija od hleba</td>
+                                <td><span class="post-type-badge">Organic</span></td>
+                                <td>Before</td>
+                                <td>73</td>
+                                <td>18</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:8%"></div></div></td>
+                            </tr>
+                            <tr>
+                                <td>Možda ovo o meni niste znali</td>
+                                <td><span class="post-type-badge">Organic</span></td>
+                                <td>Before</td>
+                                <td>59</td>
+                                <td>22</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:9%"></div></div></td>
+                            </tr>
+                            <tr>
+                                <td>Želiš da budeš poznata ili uspješna</td>
+                                <td><span class="post-type-badge">Organic</span></td>
+                                <td>Before</td>
+                                <td>60</td>
+                                <td>17</td>
+                                <td class="bar-cell"><div class="mini-bar-track"><div class="mini-bar-fill" style="width:7%"></div></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -602,6 +587,9 @@
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
-    </script></body>
+    </script>    <footer class="page-return-home">
+        <a href="/">Back to the home page</a>
+    </footer>
+</body>
 </html>
 

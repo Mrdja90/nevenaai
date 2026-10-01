@@ -14,34 +14,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Nevena Mucic — AI Visual Content Creator &middot; Basel</title>
     <meta name="description" content="Meet Nevena Mucic, an AI Visual Content Creator in Basel, Switzerland — an engineer-turned-artist blending chemical engineering precision with a fine art background in AI image generation, video production, and content strategy.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        h1, h2, h3 { font-family: var(--font-heading); }
 
         body, html {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: var(--font-body);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: #ffffff; }
-        .nav-links a.active { color: #ffffff; }
+                        .nav-links a:hover { color: var(--accent-burgundy); }
+        .nav-links a.active { color: var(--accent-burgundy); }
 
         .about-page {
             max-width: 1100px;
@@ -50,10 +39,10 @@
         }
 
         .about-eyebrow {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 1.8rem;
             font-weight: 900;
-            color: #222222;
+            color: var(--accent-burgundy);
             margin-bottom: 40px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
@@ -61,16 +50,18 @@
 
         .page-header {
             display: grid;
-            grid-template-columns: 260px 1fr 1fr;
+            grid-template-columns: 1fr 1fr 260px;
             gap: 60px;
             align-items: end;
             margin-bottom: 80px;
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .page-header h1 {
-            font-family: 'Inter', sans-serif;
+            grid-column: 1;
+            grid-row: 1;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: clamp(3rem, 6vw, 5rem);
             line-height: 1.05;
@@ -85,17 +76,24 @@
         .header-statement p {
             font-size: 1.05rem;
             line-height: 1.8;
-            color: #888;
+            color: var(--text-secondary);
             font-style: italic;
         }
 
         .header-statement p strong {
-            color: #ccc;
+            color: var(--text-secondary);
             font-weight: 400;
             font-style: normal;
         }
 
+        .header-statement {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
         .header-photo {
+            grid-column: 3;
+            grid-row: 1;
             position: relative;
             width: 260px;
             height: 320px;
@@ -118,7 +116,7 @@
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 55%;
-            background: linear-gradient(to top, #050505 0%, transparent 100%);
+            background: linear-gradient(to top, var(--bg-cream) 0%, transparent 100%);
             pointer-events: none;
         }
 
@@ -127,7 +125,7 @@
             grid-template-columns: 200px 1fr;
             gap: 60px;
             padding: 60px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--card-border);
             align-items: start;
         }
 
@@ -135,34 +133,34 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             padding-top: 6px;
             position: sticky;
-            top: 40px;
+            top: 100px;
         }
 
         .background-text p {
             font-size: 0.95rem;
             line-height: 1.95;
-            color: #888;
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
         .background-text p:last-child { margin-bottom: 0; }
 
         .background-text p strong {
-            color: #dddddd;
+            color: var(--text-primary);
             font-weight: 500;
         }
 
         .pull-quote {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-style: italic;
             font-weight: 400;
             font-size: clamp(1.3rem, 2.5vw, 1.7rem);
             line-height: 1.5;
-            color: #ccc;
-            border-left: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-secondary);
+            border-left: 1px solid var(--card-border);
             padding-left: 28px;
             margin: 40px 0;
         }
@@ -172,7 +170,7 @@
             grid-template-columns: 1fr auto;
             gap: 20px;
             padding: 28px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .timeline-item:first-child { padding-top: 0; }
@@ -181,13 +179,13 @@
         .timeline-role {
             font-size: 1rem;
             font-weight: 400;
-            color: #eee;
+            color: var(--text-primary);
             margin-bottom: 4px;
         }
 
         .timeline-company {
             font-size: 0.8rem;
-            color: #666;
+            color: var(--text-secondary);
             letter-spacing: 0.05em;
             text-transform: uppercase;
             margin-bottom: 12px;
@@ -196,7 +194,7 @@
         .timeline-desc {
             font-size: 0.85rem;
             line-height: 1.8;
-            color: #666;
+            color: var(--text-secondary);
         }
 
         .timeline-desc ul {
@@ -215,12 +213,12 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #444;
+            color: var(--text-secondary);
         }
 
         .timeline-date {
             font-size: 0.75rem;
-            color: #777777;
+            color: var(--text-secondary);
             white-space: nowrap;
             padding-top: 5px;
             text-align: right;
@@ -236,7 +234,7 @@
             font-size: 0.72rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 16px;
         }
 
@@ -245,14 +243,14 @@
             align-items: center;
             gap: 16px;
             padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .tool-row:last-child { border-bottom: none; }
 
         .tool-name {
             font-size: 0.85rem;
-            color: #aaa;
+            color: var(--text-secondary);
             width: 130px;
             flex-shrink: 0;
         }
@@ -260,7 +258,7 @@
         .tool-bar-track {
             flex: 1;
             height: 1px;
-            background: rgba(255,255,255,0.08);
+            background: var(--card-border);
             position: relative;
         }
 
@@ -268,33 +266,33 @@
             position: absolute;
             top: 0; left: 0;
             height: 1px;
-            background: rgba(255,255,255,0.35);
+            background: var(--accent-burgundy);
         }
 
         .credentials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1px;
-            background: rgba(255,255,255,0.06);
+            background: var(--card-border);
         }
 
         .credential-cell {
-            background: #050505;
+            background: var(--bg-cream);
             padding: 24px 20px;
         }
 
         .credential-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-primary);
             line-height: 1;
             margin-bottom: 6px;
         }
 
         .credential-label {
             font-size: 0.72rem;
-            color: #555;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             line-height: 1.4;
@@ -308,28 +306,28 @@
 
         .lang-name {
             font-size: 0.9rem;
-            color: #ccc;
+            color: var(--text-secondary);
             margin-bottom: 4px;
         }
 
         .lang-level {
             font-size: 0.7rem;
-            color: #777777;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
         .edu-item {
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .edu-item:first-child { padding-top: 0; }
         .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .edu-institution { font-size: 0.9rem; color: #ccc; margin-bottom: 4px; }
-        .edu-field { font-size: 0.78rem; color: #555; margin-bottom: 4px; }
-        .edu-years { font-size: 0.72rem; color: #3a3a3a; }
+        .edu-institution { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 4px; }
+        .edu-field { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 4px; }
+        .edu-years { font-size: 0.72rem; color: var(--text-secondary); }
 
         .cert-list { display: flex; flex-direction: column; gap: 12px; }
 
@@ -338,7 +336,7 @@
             align-items: center;
             gap: 14px;
             padding: 14px 18px;
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
         }
 
@@ -346,30 +344,31 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid var(--card-border);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.6rem;
-            color: #666;
+            color: var(--text-secondary);
             flex-shrink: 0;
         }
 
-        .cert-name { font-size: 0.85rem; color: #aaa; }
+        .cert-name { font-size: 0.85rem; color: var(--text-secondary); }
 
 
 
         @media (max-width: 900px) {
             .page-header { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .page-header h1, .header-statement, .header-photo { grid-column: auto; grid-row: auto; }
             .header-photo { width: 100%; height: 260px; grid-column: 1 / -1; }
         }
 
         @media (max-width: 768px) {
-            .top-nav { padding: 16px 20px; }
-            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            
+            
             .about-page { padding: 40px 5% 80px; }
             .page-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; padding-bottom: 40px; }
-            .header-photo { width: 100%; height: 220px; grid-column: auto; }
+            .header-photo { width: 100%; height: 220px; grid-column: auto; grid-row: auto; }
             .about-section { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
             .section-label { position: static; }
             .tools-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -390,7 +389,7 @@
             content: '+';
             font-size: 1.1rem;
             font-weight: 300;
-            color: #555555;
+            color: var(--text-secondary);
             line-height: 1;
             flex-shrink: 0;
             transition: color 0.3s ease;
@@ -398,7 +397,7 @@
         .about-section.open > .section-label::after,
         .cs-section.open > .cs-section-label::after {
             content: '\2212';
-            color: #aaaaaa;
+            color: var(--text-secondary);
         }
         .section-content,
         .cs-body {
@@ -416,16 +415,17 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
 </head>
 <body>
 
     <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about.html" class="active">About</a>
-            <a href="/index.html#case-studies">Case Studies</a>
-            <a href="/index.html#fashion-editorial">AI Fashion Editorial</a>
-            <a href="/artwork.html">Traditional Art</a>
             <a href="/#testimonials">Testimonials</a>
             <a href="/#contact">Contact</a>
         </div>
@@ -433,10 +433,10 @@
 
     <div class="about-page">
 
-        <h2 class="about-eyebrow">Engineer. Artist. AI Creator.</h2>
         <div class="page-header">
+            <h2 class="about-eyebrow">Engineer. Artist. AI Creator.</h2>
             <div class="header-photo">
-                <img src="https://nevenaai.com/static/profile.jpg" alt="Nevena Mucic">
+                <img src="/static/profile.jpg" alt="Nevena Mucic">
             </div>
             <h1>NEVENA<br><em>Mucic</em></h1>
             <div class="header-statement">
@@ -448,7 +448,7 @@
             </div>
         </div>
 
-        <div class="about-section">
+        <div class="about-section open">
             <div class="section-label">Background</div>
             <div class="section-content">
                 <div class="background-text">
@@ -627,6 +627,9 @@
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
-    </script></body>
+    </script>    <footer class="page-return-home">
+        <a href="/">Back to the home page</a>
+    </footer>
+</body>
 </html>
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEDIMENT — An Editorial Study · Nevena Mučić</title>
+    <meta name="description" content="SEDIMENT follows water through three states — held, in motion, and left behind — as a metaphor for how experience settles into who we become.">
+    <link rel="canonical" href="/sediment.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html {
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-burgundy); }
+    </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
+</head>
+<body>
+    <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="sediment-page">
+        <header class="sediment-page-header">
+            <p class="sediment-page-eyebrow">AI image generation · Editorial series</p>
+            <h1 class="sediment-page-title">SEDIMENT<br><em>An Editorial Study</em></h1>
+            <p class="sediment-page-description">SEDIMENT follows water through three states &mdash; held, in motion, and left behind &mdash; as a metaphor for how experience settles into who we become. Each image is part of a visual study of change, memory, and the traces we carry.</p>
+        </header>
+
+        <div class="fashion-editorial-grid" id="fashionEditorialGrid" data-asset-base="/static/artwork/fashion/"></div>
+
+        <footer class="sediment-page-footer page-return-home">
+            <a href="/"> &larr; Back to the home page</a>
+        </footer>
+    </main>
+
+    <div class="lightbox" id="feLightbox" onclick="closeFeLightboxOnBg(event)" role="dialog" aria-modal="true" aria-label="SEDIMENT image viewer">
+        <button class="lightbox-close" onclick="closeFeLightbox()" aria-label="Close image viewer">&#215;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateFeLightbox(-1)" aria-label="Previous image">&#8592;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateFeLightbox(1)" aria-label="Next image">&#8594;</button>
+        <div class="lightbox-inner">
+            <img id="feLightboxImg" src="" alt="">
+            <div class="lightbox-caption">
+                <div class="lightbox-title" id="feLightboxTitle"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/sediment.js"></script>
+</body>
+</html>
+

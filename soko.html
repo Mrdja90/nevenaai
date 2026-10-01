@@ -14,33 +14,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunstzentrum SOKO Case Study — AI Visual Content Creator &middot; Basel</title>
     <meta name="description" content="How Nevena Mucic, an AI Visual Content Creator in Basel, built an AI-assisted visual identity and data-driven content framework for Kunstzentrum SOKO, lifting engagement 4.4x with a 3.4x reach-to-follower ratio.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        h1, h2, h3 { font-family: var(--font-heading); }
 
         body, html {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: var(--font-body);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: #ffffff; }
+                        .nav-links a:hover { color: var(--accent-burgundy); }
 
         .cs-page {
             max-width: 1000px;
@@ -55,17 +44,17 @@
             font-size: 0.75rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             text-decoration: none;
             margin-bottom: 48px;
             transition: color 0.3s ease;
         }
-        .back-link:hover { color: #aaa; }
+        .back-link:hover { color: var(--text-secondary); }
         .back-link::before { content: '←'; }
 
         .cs-hero {
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
             margin-bottom: 60px;
         }
 
@@ -73,12 +62,12 @@
             font-size: 0.72rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
         .cs-title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: clamp(2.4rem, 5vw, 4rem);
             line-height: 1.05;
@@ -92,7 +81,7 @@
 
         .cs-subtitle {
             font-size: 0.85rem;
-            color: #555;
+            color: var(--text-secondary);
             letter-spacing: 0.05em;
             margin-bottom: 20px;
         }
@@ -100,13 +89,13 @@
         .cs-intro {
             font-size: 0.95rem;
             line-height: 1.9;
-            color: #777;
+            color: var(--text-secondary);
             max-width: 700px;
             margin-bottom: 40px;
         }
 
         .cs-intro strong {
-            color: #ccc;
+            color: var(--text-secondary);
             font-weight: 400;
         }
 
@@ -118,8 +107,8 @@
 
         .cs-stat {
             flex: 1;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 24px 20px;
         }
 
@@ -127,17 +116,17 @@
         .cs-stat:last-child { border-radius: 0 8px 8px 0; }
 
         .cs-stat-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 2.2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-primary);
             line-height: 1;
             margin-bottom: 6px;
         }
 
         .cs-stat-label {
             font-size: 0.7rem;
-            color: #555;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             line-height: 1.4;
@@ -148,7 +137,7 @@
             grid-template-columns: 180px 1fr;
             gap: 60px;
             padding: 52px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--card-border);
             align-items: start;
         }
 
@@ -158,23 +147,23 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             padding-top: 4px;
             position: sticky;
-            top: 40px;
+            top: 100px;
         }
 
         .cs-body p {
             font-size: 0.95rem;
             line-height: 1.95;
-            color: #888;
+            color: var(--text-secondary);
             margin-bottom: 18px;
         }
 
         .cs-body p:last-child { margin-bottom: 0; }
 
         .cs-body p strong {
-            color: #dddddd;
+            color: var(--text-primary);
             font-weight: 500;
         }
 
@@ -186,11 +175,11 @@
         }
 
         .deliverable-pill {
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid var(--card-border);
             padding: 10px 18px;
             border-radius: 30px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: var(--text-secondary);
         }
 
         /* Before / After comparison table */
@@ -202,14 +191,14 @@
         }
 
         .compare-table thead tr {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .compare-table th {
             font-size: 0.7rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #777777;
+            color: var(--text-secondary);
             padding: 0 16px 14px 0;
             text-align: left;
             font-weight: 400;
@@ -217,20 +206,20 @@
 
         .compare-table td {
             padding: 14px 16px 14px 0;
-            color: #888;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--card-border);
             vertical-align: middle;
         }
 
         .compare-table tr:last-child td { border-bottom: none; }
-        .compare-table td:first-child { color: #ccc; }
+        .compare-table td:first-child { color: var(--text-secondary); }
 
         .change-badge {
             display: inline-block;
             font-size: 0.72rem;
-            color: #aaa;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 4px;
             padding: 2px 8px;
         }
@@ -244,8 +233,8 @@
         }
 
         .period-block {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 8px;
             padding: 24px;
         }
@@ -254,7 +243,7 @@
             font-size: 0.72rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 16px;
         }
 
@@ -270,24 +259,24 @@
             justify-content: space-between;
             align-items: baseline;
             padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--card-border);
             font-size: 0.82rem;
         }
 
         .period-stat:last-child { border-bottom: none; padding-bottom: 0; }
 
-        .period-stat-name { color: #777777; }
-        .period-stat-value { color: #dddddd; }
+        .period-stat-name { color: var(--text-secondary); }
+        .period-stat-value { color: var(--text-primary); }
 
         .period-gaps {
             margin-top: 16px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--card-border);
             padding-top: 16px;
         }
 
         .period-gap-item {
             font-size: 0.78rem;
-            color: #555;
+            color: var(--text-secondary);
             padding: 4px 0;
             padding-left: 16px;
             position: relative;
@@ -297,16 +286,16 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #333;
+            color: var(--text-secondary);
         }
 
-        .period-gap-item.positive::before { color: #555; }
+        .period-gap-item.positive::before { color: var(--text-secondary); }
 
         /* TOP RESULTS / cs-body section title */
         .cs-body-title {
             font-size: 1.05rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-primary);
             letter-spacing: 0.06em;
             text-transform: uppercase;
             margin: 0 0 20px 0;
@@ -316,7 +305,7 @@
         .cs-subgroup-label {
             font-size: 0.7rem;
             font-weight: 500;
-            color: #aaaaaa;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             margin: 0 0 14px 0;
@@ -330,14 +319,14 @@
         }
 
         .perf-table thead tr {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
         }
 
         .perf-table th {
             font-size: 0.7rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #777777;
+            color: var(--text-secondary);
             padding: 0 16px 14px 0;
             text-align: left;
             font-weight: 400;
@@ -345,25 +334,25 @@
 
         .perf-table td {
             padding: 14px 16px 14px 0;
-            color: #888;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--card-border);
             vertical-align: middle;
         }
 
         .perf-table tr:last-child td { border-bottom: none; }
-        .perf-table td:first-child { color: #ccc; }
-        .perf-link { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); transition: border-color 0.3s ease, color 0.3s ease; }
-        .perf-link:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
-        .art-direction-video { margin: 20px 0 8px; max-width: 320px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0d0d0d; }
+        .perf-table td:first-child { color: var(--text-secondary); }
+        .perf-link { color: inherit; text-decoration: none; border-bottom: 1px solid var(--card-border); transition: border-color 0.3s ease, color 0.3s ease; }
+        .perf-link:hover { color: var(--accent-burgundy); border-color: var(--accent-burgundy); }
+        .art-direction-video { margin: 20px 0 8px; max-width: 320px; border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border); background: var(--bg-card); }
         .art-direction-video-el { width: 100%; display: block; aspect-ratio: 1 / 1; object-fit: cover; }
-        .art-direction-video-caption { font-size: 0.75rem; color: #666; font-style: italic; padding: 12px 16px; margin: 0; }
+        .art-direction-video-caption { font-size: 0.75rem; color: var(--text-secondary); font-style: italic; padding: 12px 16px; margin: 0; }
 
         .standout-badge {
             display: inline-block;
             font-size: 0.68rem;
-            color: #888;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-secondary);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 4px;
             padding: 3px 8px;
             white-space: normal;
@@ -378,8 +367,8 @@
         }
 
         .capability-item {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 20px 22px;
         }
 
@@ -389,13 +378,13 @@
         .capability-title {
             font-size: 0.85rem;
             font-weight: 500;
-            color: #dddddd;
+            color: var(--text-primary);
             margin-bottom: 6px;
         }
 
         .capability-desc {
             font-size: 0.78rem;
-            color: #666666;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
 
@@ -407,8 +396,8 @@
         }
 
         .application-item {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 22px;
         }
 
@@ -420,50 +409,50 @@
         .application-title {
             font-size: 0.85rem;
             font-weight: 500;
-            color: #dddddd;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
         .application-desc {
             font-size: 0.78rem;
-            color: #666666;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
 
         /* Insight */
         .insight-box {
-            border-left: 1px solid rgba(255,255,255,0.15);
+            border-left: 1px solid var(--card-border);
             padding-left: 28px;
         }
 
         .insight-box p {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-serif);
             font-style: italic;
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             line-height: 1.6;
-            color: #ccc;
+            color: var(--text-secondary);
             margin-bottom: 12px !important;
         }
 
         .insight-box span {
             font-size: 0.75rem;
-            color: #333;
+            color: var(--text-secondary);
         }
 
         /* Footnote */
         .footnote {
             font-size: 0.72rem;
-            color: #333;
+            color: var(--text-secondary);
             line-height: 1.7;
             margin-top: 16px;
             padding-top: 16px;
-            border-top: 1px solid rgba(255,255,255,0.04);
+            border-top: 1px solid var(--card-border);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .top-nav { padding: 16px 20px; }
-            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            
+            
             .cs-page { padding: 40px 5% 80px; }
             .cs-stat-row { flex-direction: column; gap: 2px; }
             .cs-stat:first-child { border-radius: 8px 8px 0 0; }
@@ -495,7 +484,7 @@
             content: '+';
             font-size: 1.1rem;
             font-weight: 300;
-            color: #555555;
+            color: var(--text-secondary);
             line-height: 1;
             flex-shrink: 0;
             transition: color 0.3s ease;
@@ -503,7 +492,7 @@
         .about-section.open > .section-label::after,
         .cs-section.open > .cs-section-label::after {
             content: '\2212';
-            color: #aaaaaa;
+            color: var(--text-secondary);
         }
         .section-content,
         .cs-body {
@@ -521,28 +510,26 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
 </head>
 <body>
 
     <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
         <div class="nav-links">
-            <a href="https://nevenaai.com/">Home</a>
-            <a href="https://nevenaai.com/about.html">About</a>
-            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
-            <a href="https://nevenaai.com/#fashion-editorial">AI Fashion Editorial</a>
-            <a href="https://nevenaai.com/artwork.html">Traditional Art</a>
-            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
-            <a href="https://nevenaai.com/#contact">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
         </div>
     </nav>
 
     <div class="cs-page">
 
-        <a href="https://nevenaai.com/#case-studies" class="back-link">All case studies</a>
-
         <!-- Hero -->
         <div class="cs-hero">
-            <p class="cs-eyebrow">Case Study · 01</p>
             <h1 class="cs-title">Kunstzentrum <em>SOKO</em></h1>
             <p class="cs-subtitle">Instagram Growth Strategy · Basel, Switzerland · Oct 2024 – Mar 2026 · Nonprofit cultural center · Serbian diaspora community · Completed engagement</p>
 
@@ -570,6 +557,15 @@
             </div>
         </div>
 
+        <!-- Problem & Goal -->
+        <div class="cs-section open">
+            <div class="cs-section-label">Problem &amp; Goal</div>
+            <div class="cs-body">
+                <p><strong>Problem:</strong> Kunstzentrum SOKO had an Instagram presence with no visual identity, no content strategy, and no analytics. Posts were published ad-hoc, engagement was unpredictable. Source material consistently consisted of <strong>low-quality mobile footage and amateur photography</strong> — no professional assets were available.</p>
+                <p><strong>Goal:</strong> Establish a recognizable visual presence and grow audience engagement, within the constraints of a <strong>nonprofit budget and limited raw material</strong>. Both visual identity and content strategy needed to be built from scratch.</p>
+            </div>
+        </div>
+
         <!-- Roles covered -->
         <div class="cs-section">
             <div class="cs-section-label">Roles Covered</div>
@@ -577,21 +573,13 @@
                 <div class="deliverables-grid">
                     <span class="deliverable-pill">Visual &amp; Graphic Design</span>
                     <span class="deliverable-pill">Content Strategy</span>
+                    <span class="deliverable-pill">Copywriting</span>
                     <span class="deliverable-pill">AI Art Direction</span>
                     <span class="deliverable-pill">Video Concept &amp; Production</span>
                     <span class="deliverable-pill">Photography &amp; Filming</span>
                     <span class="deliverable-pill">Analytics &amp; Reporting</span>
                     <span class="deliverable-pill">Brand Development</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- Problem & Goal -->
-        <div class="cs-section">
-            <div class="cs-section-label">Problem &amp; Goal</div>
-            <div class="cs-body">
-                <p><strong>Problem:</strong> Kunstzentrum SOKO had an Instagram presence with no visual identity, no content strategy, and no analytics. Posts were published ad-hoc, engagement was unpredictable. Source material consistently consisted of <strong>low-quality mobile footage and amateur photography</strong> — no professional assets were available.</p>
-                <p><strong>Goal:</strong> Establish a recognizable visual presence and grow audience engagement, within the constraints of a <strong>nonprofit budget and limited raw material</strong>. Both visual identity and content strategy needed to be built from scratch.</p>
             </div>
         </div>
 
@@ -693,7 +681,7 @@
                             <div class="period-gap-item positive">Format mix: carousels +75% views vs. single posts</div>
                             <div class="period-gap-item positive">AI identity: branded outro + AI-generated creatives</div>
                         </div>
-                        <p style="font-size: 0.72rem; color: #777777; margin-top: 14px;">Format mix: 40% carousel · 35% reel · 25% photo — intentionally optimized.</p>
+                        <p style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 14px;">Format mix: 40% carousel · 35% reel · 25% photo — intentionally optimized.</p>
                     </div>
                 </div>
             </div>
@@ -765,14 +753,18 @@
         <div class="cs-section">
             <div class="cs-section-label">Art Direction</div>
             <div class="cs-body">
-                <p><strong>Self-directed creative within nonprofit constraints.</strong> No fixed creative brief from the client — direction was largely self-initiated, adapting to each event's tone and available material.</p>
-                <p><strong>Cultural authenticity meets contemporary aesthetic.</strong> Each visual balanced the cultural heritage of the Serbian diaspora community with a clean, modern look to elevate low-quality source material.</p>
-                <p><strong>Consistent brand identity built over time.</strong> A branded AI-generated video outro (produced in Veo and Midjourney) became a recognizable identity marker across all video content — the first consistent brand element SOKO had.</p>
-                <div class="art-direction-video">
-                    <video autoplay loop muted playsinline class="art-direction-video-el">
-                        <source src="https://nevenaai.com/static/soko-falcon-outro.mp4" type="video/mp4">
-                    </video>
-                    <p class="art-direction-video-caption">The branded outro &mdash; SOKO's golden falcon, now a recognizable closing signature across all video content.</p>
+                <div class="art-direction-layout">
+                    <div class="art-direction-copy">
+                        <p><strong>Self-directed creative within nonprofit constraints.</strong> No fixed creative brief from the client — direction was largely self-initiated, adapting to each event's tone and available material.</p>
+                        <p><strong>Cultural authenticity meets contemporary aesthetic.</strong> Each visual balanced the cultural heritage of the Serbian diaspora community with a clean, modern look to elevate low-quality source material.</p>
+                        <p><strong>Consistent brand identity built over time.</strong> A branded AI-generated video outro (produced in Veo and Midjourney) became a recognizable identity marker across all video content — the first consistent brand element SOKO had.</p>
+                    </div>
+                    <div class="art-direction-video">
+                        <video autoplay loop muted playsinline class="art-direction-video-el">
+                            <source src="/static/soko-falcon-outro.mp4" type="video/mp4">
+                        </video>
+                        <p class="art-direction-video-caption">The branded outro &mdash; SOKO's golden falcon, now a recognizable closing signature across all video content.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -822,6 +814,9 @@
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
-    </script></body>
+    </script>    <footer class="page-return-home">
+        <a href="/">Back to the home page</a>
+    </footer>
+</body>
 </html>
 

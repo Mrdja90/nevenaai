@@ -14,20 +14,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traditional Art — Nevena Mucic, AI Visual Content Creator</title>
     <meta name="description" content="Original oil and acrylic paintings and book cover illustrations by Nevena Mucic, an AI Visual Content Creator based in Basel — the fine-art foundation behind her AI-driven visual work.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        .top-nav { display: flex; justify-content: flex-end; padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .nav-links a { color: #aaaaaa; text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: color 0.3s ease; }
-        .nav-links a:hover { color: #ffffff; }
-        .nav-links a.active { color: #ffffff; }
+        h1, h2, h3 { font-family: var(--font-heading); }
+        body, html { background-color: var(--bg-cream); color: var(--text-primary); font-family: var(--font-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        
+        
+        .nav-links a:hover { color: var(--accent-burgundy); }
+        .nav-links a.active { color: var(--accent-burgundy); }
         .artwork-page { max-width: 1200px; margin: 0 auto; padding: 80px 5% 120px; }
-        .page-header { margin-bottom: 80px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .page-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888888; margin-bottom: 16px; }
-        .page-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.05; margin-bottom: 16px; }
+        .page-header { margin-bottom: 80px; padding-bottom: 40px; border-bottom: 1px solid var(--card-border); }
+        .page-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+        .page-title { font-family: var(--font-heading); font-weight: 700; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.05; margin-bottom: 16px; }
         .page-title em { font-weight: 400; font-style: italic; }
-        .page-desc { font-size: 0.95rem; color: #666; line-height: 1.8; max-width: 560px; }
+        .page-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; max-width: 560px; }
         /* ── Masonry Gallery ── */
         .masonry-grid {
             display: grid;
@@ -40,7 +43,7 @@
             border-radius: 6px;
             overflow: hidden;
             aspect-ratio: 1 / 1;
-            background: #0d0d0d;
+            background: var(--bg-card);
             transform: scale(1) translateY(0);
             transition: transform 0.35s cubic-bezier(0.25,1,0.5,1), box-shadow 0.35s cubic-bezier(0.25,1,0.5,1);
         }
@@ -50,33 +53,23 @@
             height: 100%;
             object-fit: contain;
             border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid var(--card-border);
             transition: border-color 0.35s cubic-bezier(0.25,1,0.5,1);
         }
         .masonry-item:hover {
             transform: scale(1.03) translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-card-hover);
         }
         .masonry-item:hover img {
-            border-color: rgba(255,255,255,0.45);
+            border-color: var(--accent-burgundy);
         }
         .art-caption { padding: 12px 4px 0; display: flex; justify-content: space-between; align-items: baseline; }
-        .art-title { font-size: 0.82rem; color: #aaa; }
-        .art-size { font-size: 0.7rem; color: #3a3a3a; }
-        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 40px; }
-        .lightbox.open { display: flex; }
-        .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        .lightbox-inner img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px; }
-        .lightbox-caption { text-align: center; }
-        .lightbox-title { font-family: 'Inter', sans-serif; font-style: italic; font-size: 1.1rem; color: #ccc; margin-bottom: 4px; }
-        .lightbox-size { font-size: 0.72rem; color: #888888; text-transform: uppercase; letter-spacing: 0.1em; }
-        .lightbox-close { position: fixed; top: 24px; right: 32px; font-size: 1.8rem; color: #555; cursor: pointer; background: none; border: none; line-height: 1; transition: color 0.2s ease; z-index: 1001; }
-        .lightbox-close:hover { color: #fff; }
-        .lightbox-nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 2rem; color: #333; cursor: pointer; background: none; border: none; padding: 20px; transition: color 0.2s ease; z-index: 1001; }
-        .lightbox-nav:hover { color: #fff; }
-        .lightbox-prev { left: 16px; }
-        .lightbox-next { right: 16px; }
-
+        .art-title { font-size: 0.82rem; color: var(--text-secondary); }
+        .art-size { font-size: 0.7rem; color: var(--text-secondary); }
+                                        .lightbox-caption { text-align: center; }
+        .lightbox-title { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 4px; }
+        .lightbox-size { font-size: 0.72rem; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 0.1em; }
+                                                
         /* ── Book Covers Section ── */
         .books-section {
             max-width: 1200px;
@@ -87,19 +80,19 @@
         .books-header {
             margin-bottom: 48px;
             padding-top: 60px;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid var(--card-border);
         }
 
         .books-eyebrow {
             font-size: 0.72rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 16px;
         }
 
         .books-title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: clamp(2rem, 4vw, 3rem);
             line-height: 1.05;
@@ -110,7 +103,7 @@
 
         .books-desc {
             font-size: 0.9rem;
-            color: #555;
+            color: var(--text-secondary);
             line-height: 1.7;
             max-width: 520px;
         }
@@ -123,10 +116,10 @@
         }
 
         .book-card {
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             overflow: hidden;
-            background: #0d0d0d;
+            background: var(--bg-card);
             display: flex;
             flex-direction: column;
             transform: scale(1) translateY(0);
@@ -134,9 +127,9 @@
         }
 
         .book-card:hover {
-            border-color: rgba(255,255,255,0.45);
+            border-color: var(--accent-burgundy);
             transform: scale(1.02) translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-card-hover);
         }
 
         /* Scene image — full width at top */
@@ -189,29 +182,29 @@
             font-size: 0.72rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 8px;
         }
 
         .book-title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-style: italic;
             font-size: 1.1rem;
-            color: #ddd;
+            color: var(--text-primary);
             line-height: 1.35;
             margin-bottom: 5px;
         }
 
         .book-authors {
             font-size: 0.74rem;
-            color: #555;
+            color: var(--text-secondary);
             margin-bottom: 14px;
             letter-spacing: 0.03em;
         }
 
         .book-about {
             font-size: 0.82rem;
-            color: #666;
+            color: var(--text-secondary);
             line-height: 1.75;
             margin-bottom: 14px;
             flex: 1;
@@ -219,14 +212,14 @@
 
         .book-meta {
             font-size: 0.68rem;
-            color: #3a3a3a;
+            color: var(--text-secondary);
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
-            .top-nav { padding: 16px 20px; }
-            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            
+            
             .artwork-page { padding: 40px 5% 80px; }
             .masonry-grid { grid-template-columns: 1fr; gap: 16px; }
             .lightbox { padding: 20px; }
@@ -254,7 +247,7 @@
             content: '+';
             font-size: 1.1rem;
             font-weight: 300;
-            color: #555555;
+            color: var(--text-secondary);
             line-height: 1;
             flex-shrink: 0;
             transition: color 0.3s ease;
@@ -262,7 +255,7 @@
         .about-section.open > .section-label::after,
         .cs-section.open > .cs-section-label::after {
             content: '\2212';
-            color: #aaaaaa;
+            color: var(--text-secondary);
         }
         .section-content,
         .cs-body {
@@ -280,24 +273,25 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
 </head>
 <body>
     <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
         <div class="nav-links">
-            <a href="https://nevenaai.com/">Home</a>
-            <a href="https://nevenaai.com/about.html">About</a>
-            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
-            <a href="https://nevenaai.com/#fashion-editorial">AI Fashion Editorial</a>
-            <a href="https://nevenaai.com/artwork.html" class="active">Traditional Art</a>
-            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
-            <a href="https://nevenaai.com/#contact">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
         </div>
     </nav>
 
     <div class="artwork-page">
         <div class="page-header">
             <p class="page-eyebrow">Original paintings · Oil &amp; acrylic on canvas</p>
-            <h1 class="page-title">The work<br><em>behind the work.</em></h1>
+            <h1 class="page-title">The work<br><em>behind the work</em></h1>
             <p class="page-desc">Before AI tools, there were brushes. These paintings span over a decade of exhibitions, personal exploration, and the same instinct for composition and colour that now drives every visual project.</p>
         </div>
 
@@ -308,7 +302,7 @@
     <div class="books-section" id="book-covers">
         <div class="books-header">
             <p class="books-eyebrow">Cover Illustration · Book Design</p>
-            <h2 class="books-title">Between the<br><em>poem and the page.</em></h2>
+            <h2 class="books-title">Between the<br><em>poem and the page</em></h2>
             <p class="books-desc">Four covers for a series of Vlach folk poetry collections — each one designed to honour the cultural heritage and emotional depth of the verses inside.</p>
         </div>
 
@@ -317,8 +311,8 @@
             <!-- Card 01: scene photo — crop from top so book fills frame -->
             <div class="book-card">
                 <div class="book-scene">
-                    <img src="https://nevenaai.com/static/artwork/covers/drag-1-scene.png" alt="The Poetry of Love and Longing" style="object-position: center top;">
-                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-1-cover.png" alt="Cover">
+                    <img src="/static/artwork/covers/drag-1-scene.png" alt="The Poetry of Love and Longing" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-1-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 01</p>
@@ -332,8 +326,8 @@
             <!-- Card 02: scene photo — crop from top so book fills frame -->
             <div class="book-card">
                 <div class="book-scene">
-                    <img src="https://nevenaai.com/static/artwork/covers/drag-2-scene.png" alt="The Poetry of Love and Longing II" style="object-position: center top;">
-                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-2-cover.png" alt="Cover">
+                    <img src="/static/artwork/covers/drag-2-scene.png" alt="The Poetry of Love and Longing II" style="object-position: center top;">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-2-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 02</p>
@@ -347,8 +341,8 @@
             <!-- Card 03: scene photo — portrait orientation -->
             <div class="book-card portrait">
                 <div class="book-scene">
-                    <img src="https://nevenaai.com/static/artwork/covers/drag-3-scene.png" alt="The Poetry of Love and Longing III">
-                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/drag-3-cover.png" alt="Cover">
+                    <img src="/static/artwork/covers/drag-3-scene.png" alt="The Poetry of Love and Longing III">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/drag-3-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 03</p>
@@ -362,8 +356,8 @@
             <!-- Card 04: scene photo — portrait orientation -->
             <div class="book-card portrait">
                 <div class="book-scene">
-                    <img src="https://nevenaai.com/static/artwork/covers/kasi-scene.png" alt="Folk Poems of the Hearth">
-                    <img class="book-cover-thumb" src="https://nevenaai.com/static/artwork/covers/kasi-cover.png" alt="Cover">
+                    <img src="/static/artwork/covers/kasi-scene.png" alt="Folk Poems of the Hearth">
+                    <img class="book-cover-thumb" src="/static/artwork/covers/kasi-cover.png" alt="Cover">
                 </div>
                 <div class="book-body">
                     <p class="book-series">Cover Illustration · 04</p>
@@ -391,7 +385,7 @@
     </div>
 
     <script>
-        const SITEURL = "https://nevenaai.com";
+        const SITEURL = "";
         const paintings = [
             ["A symphony for her 50x50.jpg", "A Symphony for Her", "50×50 cm", "Acrylic"],
             ["Accept yourself 100x70.jpg", "Accept Yourself", "100×70 cm", "Acrylic"],
@@ -502,6 +496,9 @@
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
-    </script></body>
+    </script>    <footer class="page-return-home">
+        <a href="/">Back to the home page</a>
+    </footer>
+</body>
 </html>
 

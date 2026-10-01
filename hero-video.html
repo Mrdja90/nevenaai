@@ -12,35 +12,24 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Video Case Study — AI Visual Content Creator &middot; Basel</title>
+    <title>Promo Video Case Study — AI Visual Content Creator &middot; Basel</title>
     <meta name="description" content="A process breakdown by Nevena Mucic, an AI Visual Content Creator in Basel, on directing a multi-scene AI-generated portfolio video using 5+ AI tools, from concept to final loop.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        h1, h2, h3 { font-family: var(--font-heading); }
 
         body, html {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            font-family: var(--font-body);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-links a {
-            color: #aaaaaa;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover { color: #ffffff; }
+                        .nav-links a:hover { color: var(--accent-burgundy); }
 
         .cs-page {
             max-width: 1000px;
@@ -55,18 +44,18 @@
             font-size: 0.75rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             text-decoration: none;
             margin-bottom: 48px;
             transition: color 0.3s ease;
         }
-        .back-link:hover { color: #aaa; }
+        .back-link:hover { color: var(--text-secondary); }
         .back-link::before { content: '←'; }
 
         /* Hero */
         .cs-hero {
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--card-border);
             margin-bottom: 60px;
         }
 
@@ -74,12 +63,12 @@
             font-size: 0.72rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
         .cs-title {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-weight: 700;
             font-size: clamp(2.8rem, 6vw, 4.5rem);
             line-height: 1.05;
@@ -93,7 +82,7 @@
 
         .cs-subtitle {
             font-size: 0.95rem;
-            color: #666;
+            color: var(--text-secondary);
             line-height: 1.8;
             max-width: 680px;
             margin-bottom: 40px;
@@ -106,8 +95,8 @@
 
         .cs-stat {
             flex: 1;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 24px 20px;
         }
 
@@ -115,17 +104,17 @@
         .cs-stat:last-child { border-radius: 0 8px 8px 0; }
 
         .cs-stat-number {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-heading);
             font-size: 2.2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-primary);
             line-height: 1;
             margin-bottom: 6px;
         }
 
         .cs-stat-label {
             font-size: 0.7rem;
-            color: #555;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             line-height: 1.4;
@@ -137,7 +126,7 @@
             grid-template-columns: 180px 1fr;
             gap: 60px;
             padding: 52px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--card-border);
             align-items: start;
         }
 
@@ -147,31 +136,31 @@
             font-size: 0.72rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #888888;
+            color: var(--text-secondary);
             padding-top: 4px;
             position: sticky;
-            top: 40px;
+            top: 100px;
         }
 
         .cs-body p {
             font-size: 0.95rem;
             line-height: 1.95;
-            color: #888;
+            color: var(--text-secondary);
             margin-bottom: 18px;
         }
 
         .cs-body p:last-child { margin-bottom: 0; }
-        .cs-body p strong { color: #ddd; font-weight: 400; }
+        .cs-body p strong { color: var(--text-primary); font-weight: 400; }
 
         /* Pull quote */
         .pull-quote {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-style: italic;
             font-weight: 400;
             font-size: clamp(1.2rem, 2.2vw, 1.55rem);
             line-height: 1.6;
-            color: #ccc;
-            border-left: 1px solid rgba(255,255,255,0.15);
+            color: var(--text-secondary);
+            border-left: 1px solid var(--card-border);
             padding-left: 28px;
             margin: 8px 0 0 0;
         }
@@ -185,8 +174,8 @@
         }
 
         .scene-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 20px 18px;
         }
 
@@ -195,7 +184,7 @@
 
         .scene-num {
             font-size: 0.62rem;
-            color: #333;
+            color: var(--text-secondary);
             letter-spacing: 0.1em;
             margin-bottom: 10px;
             font-weight: 500;
@@ -203,7 +192,7 @@
 
         .scene-text {
             font-size: 0.8rem;
-            color: #777;
+            color: var(--text-secondary);
             line-height: 1.55;
         }
 
@@ -218,8 +207,8 @@
             display: grid;
             grid-template-columns: 40px 1fr;
             gap: 20px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             padding: 22px 22px 22px 0;
             align-items: start;
         }
@@ -234,14 +223,14 @@
             justify-content: center;
             padding-top: 3px;
             font-size: 0.7rem;
-            color: #2a2a2a;
+            color: var(--text-secondary);
             font-weight: 500;
             letter-spacing: 0.05em;
         }
 
         .step-title {
             font-size: 0.9rem;
-            color: #ccc;
+            color: var(--text-secondary);
             margin-bottom: 6px;
             font-weight: 400;
         }
@@ -249,9 +238,9 @@
         .step-tool {
             display: inline-block;
             font-size: 0.68rem;
-            color: #555;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
+            color: var(--text-secondary);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 4px;
             padding: 2px 8px;
             margin-bottom: 10px;
@@ -260,7 +249,7 @@
 
         .step-desc {
             font-size: 0.82rem;
-            color: #666;
+            color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 10px;
         }
@@ -270,7 +259,7 @@
 
         details.prompt-block summary {
             font-size: 0.72rem;
-            color: #3a3a3a;
+            color: var(--text-secondary);
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -280,7 +269,7 @@
             transition: color 0.2s;
         }
 
-        details.prompt-block summary:hover { color: #666; }
+        details.prompt-block summary:hover { color: var(--text-secondary); }
         details.prompt-block summary::-webkit-details-marker { display: none; }
 
         .prompt-arrow {
@@ -293,13 +282,13 @@
 
         .prompt-code {
             margin-top: 10px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: var(--card-border);
+            border: 1px solid var(--card-border);
             border-radius: 6px;
             padding: 14px 16px;
             font-family: 'Courier New', monospace;
             font-size: 0.72rem;
-            color: #555;
+            color: var(--text-secondary);
             line-height: 1.75;
             white-space: pre-wrap;
             word-break: break-word;
@@ -313,31 +302,31 @@
         }
 
         .tool-pill {
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--card-border);
             padding: 10px 18px;
             border-radius: 30px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: var(--text-secondary);
         }
 
         /* Insight box */
         .insight-box {
-            border-left: 1px solid rgba(255,255,255,0.15);
+            border-left: 1px solid var(--card-border);
             padding-left: 28px;
         }
 
         .insight-box p {
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-body);
             font-style: italic;
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             line-height: 1.6;
-            color: #ccc;
+            color: var(--text-secondary);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .top-nav { padding: 16px 20px; }
-            .nav-links a { margin-left: 16px; font-size: 0.8rem; }
+            
+            
             .cs-page { padding: 40px 5% 80px; }
             .cs-stat-row { flex-direction: column; gap: 2px; }
             .cs-stat:first-child { border-radius: 8px 8px 0 0; }
@@ -366,7 +355,7 @@
             content: '+';
             font-size: 1.1rem;
             font-weight: 300;
-            color: #555555;
+            color: var(--text-secondary);
             line-height: 1;
             flex-shrink: 0;
             transition: color 0.3s ease;
@@ -374,7 +363,7 @@
         .about-section.open > .section-label::after,
         .cs-section.open > .cs-section-label::after {
             content: '\2212';
-            color: #aaaaaa;
+            color: var(--text-secondary);
         }
         .section-content,
         .cs-body {
@@ -392,30 +381,32 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/static/custom.css?v=83">
 </head>
-<body>
+<body class="promo-video-page">
 
     <nav class="top-nav">
+        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
+            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+        </a>
         <div class="nav-links">
-            <a href="https://nevenaai.com/">Home</a>
-            <a href="https://nevenaai.com/about.html">About</a>
-            <a href="https://nevenaai.com/#case-studies">Case Studies</a>
-            <a href="https://nevenaai.com/#fashion-editorial">AI Fashion Editorial</a>
-            <a href="https://nevenaai.com/artwork.html">Traditional Art</a>
-            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
-            <a href="https://nevenaai.com/#contact">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#contact">Contact</a>
         </div>
     </nav>
 
     <div class="cs-page">
 
-        <a href="https://nevenaai.com/#case-studies" class="back-link">All case studies</a>
-
         <!-- Hero -->
         <div class="cs-hero">
-            <p class="cs-eyebrow">Case Study · 03 · Process Breakdown</p>
-            <h1 class="cs-title">Hero <em>Video.</em></h1>
+            <h1 class="cs-title">Promo <em>Video</em></h1>
             <p class="cs-subtitle">How I directed a multi-scene AI-generated video for my portfolio — with a clear vision from the start, not trial and error.</p>
+
+            <video class="promo-hero-video" autoplay loop muted playsinline controls preload="metadata" poster="/static/background-poster.jpg" aria-label="Promo Video">
+                <source src="/static/background.mp4" type="video/mp4">
+            </video>
 
             <div class="cs-stat-row">
                 <div class="cs-stat">
@@ -438,7 +429,7 @@
         </div>
 
         <!-- The Intent -->
-        <div class="cs-section">
+        <div class="cs-section open">
             <div class="cs-section-label">The Intent</div>
             <div class="cs-body">
                 <div class="pull-quote">
@@ -611,6 +602,9 @@
             l.addEventListener('click',function(){s.classList.toggle('open');});
         });
     })();
-    </script></body>
+    </script>    <footer class="page-return-home">
+        <a href="/">Back to the home page</a>
+    </footer>
+</body>
 </html>
 
