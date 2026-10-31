@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEDIMENT — An Editorial Study · Nevena Mučić</title>
     <meta name="description" content="SEDIMENT follows water through three states — held, in motion, and left behind — as a metaphor for how experience settles into who we become.">
-    <link rel="canonical" href="/sediment.html">
+    <link rel="canonical" href="https://nevenaai.com/sediment.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -20,32 +20,164 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--accent-burgundy); }
     </style>
-    <link rel="stylesheet" href="/static/custom.css?v=83">
+    <link rel="stylesheet" href="https://nevenaai.com/static/custom.css?v=90">
 </head>
 <body>
-    <nav class="top-nav">
-        <a class="brand-logo" href="/" aria-label="Nevena Mučić home">
-            <img src="/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
+    <nav class="top-nav" aria-label="Main navigation">
+        <a class="brand-logo" href="https://nevenaai.com/" aria-label="Nevena Mučić home">
+            <img src="https://nevenaai.com/static/Nevena_logo_no_text.png" alt="Nevena Mučić">
         </a>
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/#testimonials">Testimonials</a>
-            <a href="/#contact">Contact</a>
+            <a href="https://nevenaai.com/">Home</a>
+            <a href="https://nevenaai.com/about.html">About</a>
+            <a href="https://nevenaai.com/#testimonials">Testimonials</a>
+            <a href="https://nevenaai.com/#contact">Contact</a>
         </div>
     </nav>
 
     <main class="sediment-page">
-        <header class="sediment-page-header">
-            <p class="sediment-page-eyebrow">AI image generation · Editorial series</p>
-            <h1 class="sediment-page-title">SEDIMENT<br><em>An Editorial Study</em></h1>
-            <p class="sediment-page-description">SEDIMENT follows water through three states &mdash; held, in motion, and left behind &mdash; as a metaphor for how experience settles into who we become. Each image is part of a visual study of change, memory, and the traces we carry.</p>
+        <header class="sediment-hero">
+            <div class="sediment-hero-copy">
+                <p class="sediment-page-eyebrow">AI image generation <span aria-hidden="true">&middot;</span> Editorial series</p>
+                <h1 class="sediment-page-title">SEDIMENT</h1>
+                <p class="sediment-hero-subtitle">An editorial study in three states of water.</p>
+                <p class="sediment-page-description">Water holds, moves and leaves things behind. SEDIMENT follows one woman through three states of it, and through the way experience settles into who we become. Three looks, three abandoned spaces, one face that never changes.</p>
+            </div>
+            <figure class="sediment-hero-art">
+                <button class="sediment-image-button" type="button" aria-label="View Frozen wave">
+                    <img src="https://nevenaai.com/static/artwork/sediment/sediment-01.jpg" alt="A woman in a pleated orchid dress standing in the shallow water of the Pamukkale terraces" fetchpriority="high">
+                </button>
+                <figcaption>Look III, Frozen wave. Pleated orchid and tulle, Pamukkale terraces.</figcaption>
+            </figure>
         </header>
 
-        <div class="fashion-editorial-grid" id="fashionEditorialGrid" data-asset-base="/static/artwork/fashion/"></div>
+        <section class="sediment-story sediment-held" aria-labelledby="sediment-held-title">
+            <div class="sediment-shell">
+                <header class="sediment-story-heading">
+                    <h2 id="sediment-held-title">I. Held</h2>
+                    <p>Linen cut asymmetric, one shoulder bare, in a derelict swimming pool. Teal tile, rust and a low side light that holds everything still.</p>
+                </header>
+                <div class="sediment-gallery sediment-gallery-held">
+                    <figure class="sediment-frame held-one">
+                        <button class="sediment-image-button" type="button" aria-label="View the linen look in the abandoned pool">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-02.jpg" alt="A woman in a long linen dress in an abandoned swimming pool with teal tiles" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame held-two">
+                        <button class="sediment-image-button" type="button" aria-label="View the linen dress in motion">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-03.jpg" alt="The hem of a linen dress moving across the tiled pool floor" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame held-three">
+                        <button class="sediment-image-button" type="button" aria-label="View the poolside portrait">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-04.jpg" alt="Portrait of the model in a one-shoulder linen dress" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame held-four">
+                        <button class="sediment-image-button" type="button" aria-label="View the makeup detail">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-05.jpg" alt="A violet compact resting on a rusted pool ladder" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame held-film">
+                        <video controls muted playsinline preload="metadata" poster="https://nevenaai.com/static/artwork/sediment/sediment-02.jpg" aria-label="Film in the abandoned swimming pool">
+                            <source src="https://nevenaai.com/static/artwork/sediment/sediment-film-01.mp4" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    </figure>
+                </div>
+            </div>
+        </section>
 
-        <footer class="sediment-page-footer page-return-home">
-            <a href="/"> &larr; Back to the home page</a>
+        <section class="sediment-story sediment-motion" aria-labelledby="sediment-motion-title">
+            <div class="sediment-shell">
+                <header class="sediment-story-heading">
+                    <h2 id="sediment-motion-title">II. In motion</h2>
+                    <p>Draped copper satin, one shoulder bare, in an abandoned hamam. A dome, an oculus and a single warm shaft of light.</p>
+                </header>
+                <div class="sediment-gallery sediment-gallery-motion">
+                    <figure class="sediment-frame motion-one">
+                        <button class="sediment-image-button" type="button" aria-label="View the copper look in the hamam">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-06.jpg" alt="A woman in a copper satin dress seated beneath a stone arch in the hamam" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame motion-two">
+                        <button class="sediment-image-button" type="button" aria-label="View the copper look in the warm light">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-07.jpg" alt="The model in a copper satin dress in the warm light of an abandoned hamam" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame motion-film">
+                        <video controls muted playsinline preload="metadata" poster="https://nevenaai.com/static/artwork/sediment/sediment-06.jpg" aria-label="Film in the abandoned hamam">
+                            <source src="https://nevenaai.com/static/artwork/sediment/sediment-film-02.mp4" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="sediment-story sediment-left-behind" aria-labelledby="sediment-left-title">
+            <div class="sediment-shell">
+                <header class="sediment-story-heading">
+                    <h2 id="sediment-left-title">III. Left behind</h2>
+                    <p>Muted orchid, sculpted pleats on one side and sheer tulle on the other, on the travertine terraces of Pamukkale at golden hour.</p>
+                </header>
+                <div class="sediment-gallery sediment-gallery-left">
+                    <figure class="sediment-frame left-one">
+                        <button class="sediment-image-button" type="button" aria-label="View the final look at golden hour">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-08.jpg" alt="The model moves through the Pamukkale terraces in a flowing orchid dress at sunset" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame left-two">
+                        <button class="sediment-image-button" type="button" aria-label="View the final look portrait">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-09.jpg" alt="Close portrait of the model behind sheer orchid tulle" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame left-three">
+                        <button class="sediment-image-button" type="button" aria-label="View the final look in the water">
+                            <img src="https://nevenaai.com/static/artwork/sediment/sediment-10.jpg" alt="The model walks through shallow water at the white Pamukkale terraces" loading="lazy">
+                        </button>
+                    </figure>
+                    <figure class="sediment-frame left-film">
+                        <video controls muted playsinline preload="metadata" poster="https://nevenaai.com/static/artwork/sediment/sediment-01.jpg" aria-label="Film at the Pamukkale terraces">
+                            <source src="https://nevenaai.com/static/artwork/sediment/sediment-film-03.mp4" type="video/mp4">
+                            Your browser does not support HTML video.
+                        </video>
+                    </figure>
+                </div>
+                <p class="sediment-credit">AI-generated. Creative direction, styling, light and motion by Nevena Mučić. One model across ten frames and three films.</p>
+            </div>
+        </section>
+
+        <section class="sediment-campaign">
+            <div class="sediment-shell">
+                <div class="sediment-campaign-intro">
+                    <h2>From editorial to your campaign</h2>
+                    <p>The same woman and the same world, built to scale across a whole collection. Locations, light and styling are designed around your pieces, not around a template.</p>
+                </div>
+                <div class="sediment-campaign-points">
+                    <div>
+                        <h3>One face across the collection</h3>
+                        <p>A consistent model, so every look reads as one campaign, not a set of experiments.</p>
+                    </div>
+                    <div>
+                        <h3>Every format you publish in</h3>
+                        <p>Delivered in 4:5, 9:16 and 16:9, as stills and as moving image.</p>
+                    </div>
+                    <div>
+                        <h3>A world for each piece</h3>
+                        <p>Setting, light and styling are chosen for your fabric, cut and season.</p>
+                    </div>
+                </div>
+                <a class="sediment-campaign-cta" href="https://nevenaai.com/#contact">Launching a collection? Let&rsquo;s build its world <span aria-hidden="true">&rarr;</span></a>
+                <p class="sediment-campaign-note">Tell me the brand, the season, the deadline and the formats you need.</p>
+            </div>
+        </section>
+
+        <footer class="sediment-footer">
+            <div class="sediment-shell">
+                <p>&copy; 2026 Nevena Mučić. SEDIMENT is a self-initiated editorial study.</p>
+                <a href="https://nevenaai.com/">Back to home <span aria-hidden="true">&nearr;</span></a>
+            </div>
         </footer>
     </main>
 
@@ -61,7 +193,7 @@
         </div>
     </div>
 
-    <script src="/static/sediment.js"></script>
+    <script src="https://nevenaai.com/static/sediment.js?v=8"></script>
 </body>
 </html>
 
